@@ -31,10 +31,7 @@
                     VerticalAlignment="Top"
                     Width="200"
                     Height="20"
-                    DisplayMemberPath="RoleOfUser"
-                    SelectedItem="{Binding Users}"
-                    SelectedIndex="0"
-                    x:Name="RoleEmployee"
+                    x:Name="ComboRole"
             />
         <TextBlock
                     Grid.Row="2"

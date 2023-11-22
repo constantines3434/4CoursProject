@@ -19,11 +19,16 @@ namespace EducationalPracticePavilions.View
     public partial class Authorization : Page
     {
         public static Captcha captcha;
+        List<string> Roles = new List<string>
+        {
+            "Пользователь",
+            "Администратор",
+        };
         public Authorization()
         {
             InitializeComponent();
-            RoleEmployee.ItemsSource = EnigmaBase.GetContext().Users.ToList();//PavilionsBase.GetContext().Roles.ToList();
-            RoleEmployee.SelectedIndex = 0;
+            ComboRole.ItemsSource = Roles;
+            ComboRole.SelectedIndex = 0;
         }
         private int countOfAttempt = 0; //Счетчик попыток
         /// <summary>
@@ -31,14 +36,14 @@ namespace EducationalPracticePavilions.View
         /// </summary>
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
         {
-            string role = RoleEmployee.Text;
+            string role = ComboRole.SelectedItem.ToString().ToLower();
             string login = LoginBox.Text.ToLower();
             string password = PasswordBox.Password;
             
             if ((login != "") && (password != ""))
             {
                 User authorizationUser = null;
-                EmoloyeeAuthorization(authorizationUser, role, login, password, ref countOfAttempt);
+                UserAuthorization(authorizationUser, role, login, password, ref countOfAttempt);
             }
             else
                 GoToCaptcha(ref countOfAttempt);
@@ -62,7 +67,7 @@ namespace EducationalPracticePavilions.View
                 countOfAttempt = 0;
             }
         }
-        private void EmoloyeeAuthorization(User authorizationUser, string role,
+        private void UserAuthorization(User authorizationUser, string role,
                                           string login, string password, ref int countOfAttempt)
         {
         authorizationUser = EnigmaBase.GetContext().Users.Where(p => p.LoginOfUser.ToLower() == login
