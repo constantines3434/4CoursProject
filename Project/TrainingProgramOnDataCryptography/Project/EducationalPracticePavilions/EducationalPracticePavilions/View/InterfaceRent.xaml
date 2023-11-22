@@ -1,0 +1,114 @@
+﻿<Page x:Class="EducationalPracticePavilions.View.InterfaceRent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EducationalPracticePavilions.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InterfaceRent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Text="Название ТЦ"
+            Grid.Row="0"
+            Grid.Column="0"/>
+        <TextBlock
+            Text="Название павильона"
+            TextWrapping="Wrap"
+            Grid.Row="1"
+            Grid.Column="0"/>
+        <TextBlock
+            Text="Арендатор"
+            Grid.Row="2"
+            Grid.Column="0"/>
+        
+        <ComboBox
+            x:Name="ComboMallsName"
+            DisplayMemberPath="NameMalls"
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="300"
+            HorizontalAlignment="Left"
+            SelectedItem="{Binding Malls}" Margin="0,12,0,0" VerticalAlignment="Top"
+            />
+        <Button x:Name="ButtonReschedulingTheRentalPeriodForAllPavilions"
+                Click="ButtonReschedulingTheRentalPeriodForAllPavilions_Click"
+                Content="Перенос срока аренды"
+                Grid.Column="1"
+                Grid.Row="3"
+                Height="40"
+                HorizontalAlignment="Right"
+                />
+        <ComboBox
+            x:Name="ComboPavilionsInMall"
+            DisplayMemberPath="NamePavilions"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="300"
+            HorizontalAlignment="Left"
+            SelectedItem="{Binding Pavilions}" Margin="0,12,0,0" VerticalAlignment="Top"
+            SelectionChanged="ComboMallsName_SelectionChanged"
+            />
+        <ComboBox
+            x:Name="ComboTenant"
+            DisplayMemberPath="CompanyName"
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="300"
+            HorizontalAlignment="Left"
+            SelectedItem="{Binding Tenants}" Margin="0,12,0,0" VerticalAlignment="Top"
+            />
+        <TextBlock
+            Text="Начало аренды"
+            Grid.Row="3"
+            Grid.Column="0"/>
+        <DatePicker x:Name="DatePickerStartOfLease"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Margin="0,12,0,0"/>
+        <TextBlock
+            Text="Конец аренды"
+            Grid.Row="4"
+            Grid.Column="0"/>
+        <DatePicker x:Name="DatePickerEndOfLease"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Margin="0,12,0,0"/>
+        <TextBlock
+            Text="Статус аренды"
+            Grid.Row="5"
+            Grid.Column="0"/>
+        <ComboBox
+            x:Name="ComboStatusRent"
+            DisplayMemberPath="StatusRentName"
+            Grid.Row="5"
+            Grid.Column="1"
+            Width="300"
+            HorizontalAlignment="Left"
+            SelectedItem="{Binding StatusRent}" Margin="0,12,0,0" VerticalAlignment="Top"
+            />
+        <Button x:Name="ButtonSave"
+                Click="ButtonSave_Click"
+                Content="Сохранение"
+                Grid.Column="1"
+                Grid.Row="11"
+                HorizontalAlignment="Left"
+                />
+    </Grid>
+</Page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7fecff5cd0a84f139b882ca35c8cce66" Name="Diagram1">
+        <EntityTypeShape EntityType="EnigmaBaseModel.EnigmaMachine" Width="1.5" PointX="5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnigmaBaseModel.Lesson" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnigmaBaseModel.Reflector" Width="1.5" PointX="2.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnigmaBaseModel.Rotor" Width="1.5" PointX="5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnigmaBaseModel.SetOfRotor" Width="1.5" PointX="2.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnigmaBaseModel.UserProgress" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnigmaBaseModel.User" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="EnigmaBaseModel.FK__EnigmaMac__IdRef__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="EnigmaBaseModel.FK__EnigmaMac__IdSet__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="EnigmaBaseModel.FK__UserProgr__IdLes__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="EnigmaBaseModel.FK__Rotors__IdSetOfR__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="EnigmaBaseModel.FK__UserProgr__IdUse__3B75D760" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
