@@ -27,13 +27,18 @@ namespace EducationalPracticePavilions.View
         public event EventHandler DataUpdated;
 
         private User _currentUser = new User();
-
+        List<string> Roles = new List<string>
+        {
+            "Пользователь",
+            "Администратор",
+            "Удалён"
+        };
         public InterfaceAddEditUser(User selectedUser)
         {
             InitializeComponent();
             if (selectedUser != null)
                 _currentUser = selectedUser;
-
+            ComboRole.ItemsSource = Roles;
             DataContext = _currentUser;
         }
         private void OnDataUpdated()
@@ -44,10 +49,11 @@ namespace EducationalPracticePavilions.View
         {
             StringBuilder errors = new StringBuilder();
 
+            _currentUser.RoleOfUser = ComboRole.SelectedItem.ToString();
             if (string.IsNullOrWhiteSpace(_currentUser.LoginOfUser))
                 errors.AppendLine("Укажите корректно Логин");
-            if (string.IsNullOrWhiteSpace(_currentUser.RoleOfUser))
-                errors.AppendLine("Укажите корректно Роль");
+            if (_currentUser.RoleOfUser == null)
+                errors.AppendLine("Корректно выберите роль");
             if (string.IsNullOrWhiteSpace(_currentUser.PasswordOfUser))
                 errors.AppendLine("Укажите корректное Пароль");
             

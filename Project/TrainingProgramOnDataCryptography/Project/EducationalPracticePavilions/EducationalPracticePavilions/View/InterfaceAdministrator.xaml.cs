@@ -75,16 +75,16 @@ namespace EducationalPracticePavilions.View
         }
         private void AddUser_Click(object sender, RoutedEventArgs e)
         {
-            InterfaceAddEditEmployee addEditEmployee = new InterfaceAddEditEmployee(null);
-            addEditEmployee.DataUpdated += HandleDataUpdated; // Подпишитесь на событие
-            Manager.MainFrame.Navigate(addEditEmployee);
+            InterfaceAddEditUser addEditUser = new InterfaceAddEditUser(null);
+            addEditUser.DataUpdated += HandleDataUpdated; // Подпишитесь на событие
+            Manager.MainFrame.Navigate(addEditUser);
         }
-        private void EditEmployee_Click(object sender, RoutedEventArgs e)
+        private void EditUser_Click(object sender, RoutedEventArgs e)
         {
-            Employee selectedUser = (Employee)(sender as Button).DataContext;
-            InterfaceAddEditEmployee addEditEmployee = new InterfaceAddEditEmployee(selectedUser);
-            addEditEmployee.DataUpdated += HandleDataUpdated; // Подпишитесь на событие
-            Manager.MainFrame.Navigate(addEditEmployee);
+            User selectedUser = (User)(sender as Button).DataContext;
+            InterfaceAddEditUser addEditUser = new InterfaceAddEditUser(selectedUser);
+            addEditUser.DataUpdated += HandleDataUpdated; // Подпишитесь на событие
+            Manager.MainFrame.Navigate(addEditUser);
         }
     }
 }

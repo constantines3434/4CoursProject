@@ -164,17 +164,11 @@
     <Compile Include="View\Captcha.xaml.cs">
       <DependentUpon>Captcha.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\InterfaceAddEditEmployee.xaml.cs">
-      <DependentUpon>InterfaceAddEditEmployee.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\InterfaceAddEditUser.xaml.cs">
       <DependentUpon>InterfaceAddEditUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\InterfaceAdministrator.xaml.cs">
       <DependentUpon>InterfaceAdministrator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\InterfaceAllRentsOfTenant.xaml.cs">
-      <DependentUpon>InterfaceAllRentsOfTenant.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\InterfaceMall.xaml.cs">
       <DependentUpon>InterfaceMall.xaml</DependentUpon>
@@ -196,19 +190,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\InterfaceAddEditEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\InterfaceAddEditUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\InterfaceAdministrator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\InterfaceAllRentsOfTenant.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

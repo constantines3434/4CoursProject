@@ -39,25 +39,23 @@
             Grid.Column="1"
             Grid.Row="0"
             HorizontalAlignment="Left"
-            Text="{Binding Surname}"
+            Text="{Binding LoginOfUser}"
             BorderBrush="Black"
             BorderThickness="1,1,1,1"/>
-        <TextBox
-            Width="550"
-            MaxLength="100"
-            Grid.Column="1"
+        <ComboBox
+            x:Name="ComboRole"
             Grid.Row="1"
+            Grid.Column="1"
+            Width="300"
             HorizontalAlignment="Left"
-            Text="{Binding NameEmployee}"
-            BorderBrush="Black"
-            BorderThickness="1,1,1,1"/>
+            />
         <TextBox
             Width="550"
             MaxLength="100"
             Grid.Column="1"
             Grid.Row="2"
             HorizontalAlignment="Left"
-            Text="{Binding Patronimic}"/>
+            Text="{Binding PasswordOfUser}"/>
 
         <Button x:Name="ButtonSave"
                 Click="ButtonSave_Click"
