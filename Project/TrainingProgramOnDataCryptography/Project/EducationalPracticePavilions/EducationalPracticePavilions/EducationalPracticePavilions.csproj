@@ -92,57 +92,6 @@
     <Compile Include="Model\Lesson.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\City.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Employee.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\GetTenantRents_Result.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Mall.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Pavilion.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Rent.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Role.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\StatePavilion.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\StatusMall.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\StatusPavilion.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\StatusRent.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Tenant.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Reflector.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
@@ -158,6 +107,10 @@
     <Compile Include="Model\UserProgress.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControlls\Questions.xaml.cs">
+      <DependentUpon>Questions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\LessonVM.cs" />
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
@@ -170,18 +123,16 @@
     <Compile Include="View\InterfaceAdministrator.xaml.cs">
       <DependentUpon>InterfaceAdministrator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\InterfaceMall.xaml.cs">
-      <DependentUpon>InterfaceMall.xaml</DependentUpon>
+    <Compile Include="View\QuestionsAfterLessons.xaml.cs">
+      <DependentUpon>QuestionsAfterLessons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\InterfacePavilions.xaml.cs">
-      <DependentUpon>InterfacePavilions.xaml</DependentUpon>
+    <Compile Include="View\TheoreticalPage.cs">
+      <DependentUpon>TheoreticalPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\InterfaceRent.xaml.cs">
-      <DependentUpon>InterfaceRent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ListMalls.xaml.cs">
-      <DependentUpon>ListMalls.xaml</DependentUpon>
-    </Compile>
+    <Page Include="UserControlls\Questions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,26 +149,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\InterfaceMall.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\InterfacePavilions.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\InterfaceRent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ListMalls.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ListPavilions.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -228,14 +159,18 @@
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Commands\Manager.cs" />
-    <Compile Include="ViewModel\ViewModelEmployees.cs" />
-    <Compile Include="View\ListPavilions.xaml.cs">
-      <DependentUpon>ListPavilions.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\QuestionsAfterLessons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TheoreticalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -255,19 +190,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <EntityDeploy Include="Model\EnigmaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EnigmaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Model\EnigmaModel.edmx.diagram">
       <DependentUpon>EnigmaModel.edmx</DependentUpon>
-    </None>
-    <None Include="Model\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -295,16 +223,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EnigmaModel.edmx</DependentUpon>
       <LastGenOutput>EnigmaModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <None Include="Resources\emblem.jpg" />
   </ItemGroup>

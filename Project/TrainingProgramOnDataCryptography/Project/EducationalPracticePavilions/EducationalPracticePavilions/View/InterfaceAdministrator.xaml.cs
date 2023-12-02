@@ -58,7 +58,7 @@ namespace EducationalPracticePavilions.View
                         if (UserToDelete != null)
                         {
                             UserToDelete.RoleOfUser = "Удалён";
-                            PavilionsBase.GetContext().SaveChanges();
+                            EnigmaBase.GetContext().SaveChanges();
                             UpdateUsers();
                         }
                     }

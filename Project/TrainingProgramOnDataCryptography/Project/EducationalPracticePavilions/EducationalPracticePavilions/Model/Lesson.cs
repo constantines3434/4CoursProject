@@ -11,8 +11,10 @@ namespace EducationalPracticePavilions.Model
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Lesson
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+
+    public partial class Lesson : INotifyPropertyChanged
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lesson()
@@ -27,5 +29,11 @@ namespace EducationalPracticePavilions.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserProgress> UserProgresses { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
     }
 }

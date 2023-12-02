@@ -26,7 +26,9 @@ namespace EducationalPracticePavilions
         {
             InitializeComponent();
             Manager.MainFrame = MainFrame;
-            MainFrame.Navigate(new Authorization());       
+            //  MainFrame.Navigate(new Authorization());
+            MainFrame.Navigate(new TheoreticalPage());
+            //MainFrame.Navigate(new Quize());
         }
         private void ButtonBackClick(object sender, RoutedEventArgs e)
         {
