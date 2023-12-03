@@ -12,20 +12,19 @@ namespace EducationalPracticePavilions.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Lesson
+    public partial class Quize
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Lesson()
+        public Quize()
         {
-            this.UserProgresses = new HashSet<UserProgress>();
+            this.Questions = new HashSet<Question>();
         }
     
-        public int IdLesson { get; set; }
-        public string LessonTitle { get; set; }
-        public string Content { get; set; }
-        public string Concepts { get; set; }
+        public int IdQuiz { get; set; }
+        public Nullable<int> IdProgress { get; set; }
     
+        public virtual UserProgress UserProgress { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserProgress> UserProgresses { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }

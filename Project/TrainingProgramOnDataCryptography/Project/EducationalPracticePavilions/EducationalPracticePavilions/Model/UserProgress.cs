@@ -14,12 +14,20 @@ namespace EducationalPracticePavilions.Model
     
     public partial class UserProgress
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserProgress()
+        {
+            this.Quizes = new HashSet<Quize>();
+        }
+    
         public int IdProgress { get; set; }
         public Nullable<int> IdUser { get; set; }
         public Nullable<int> IdLesson { get; set; }
         public Nullable<bool> Completed { get; set; }
     
         public virtual Lesson Lesson { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Quize> Quizes { get; set; }
         public virtual User User { get; set; }
     }
 }

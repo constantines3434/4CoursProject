@@ -22,6 +22,28 @@
           <Property Name="Content" Type="nvarchar" MaxLength="100" />
           <Property Name="Concepts" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="IdQuestion" />
+          </Key>
+          <Property Name="IdQuestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Quizes">
+          <Key>
+            <PropertyRef Name="IdQuiz" />
+          </Key>
+          <Property Name="IdQuiz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProgress" Type="int" />
+        </EntityType>
+        <EntityType Name="QuizQuestions">
+          <Key>
+            <PropertyRef Name="IdQuiz" />
+            <PropertyRef Name="IdQuestion" />
+          </Key>
+          <Property Name="IdQuiz" Type="int" Nullable="false" />
+          <Property Name="IdQuestion" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Reflectors">
           <Key>
             <PropertyRef Name="IdReflector" />
@@ -63,7 +85,7 @@
           <Property Name="RoleOfUser" Type="nvarchar" MaxLength="13" />
           <Property Name="PasswordOfUser" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <Association Name="FK__EnigmaMac__IdRef__46E78A0C">
+        <Association Name="FK__EnigmaMac__IdRef__4F7CD00D">
           <End Role="Reflectors" Type="Self.Reflectors" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -77,7 +99,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EnigmaMac__IdSet__45F365D3">
+        <Association Name="FK__EnigmaMac__IdSet__4E88ABD4">
           <End Role="SetOfRotors" Type="Self.SetOfRotors" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -91,7 +113,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Rotors__IdSetOfR__412EB0B6">
+        <Association Name="FK__Quizes__IdProgre__412EB0B6">
+          <End Role="UserProgress" Type="Self.UserProgress" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Quizes" Type="Self.Quizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProgress">
+              <PropertyRef Name="IdProgress" />
+            </Principal>
+            <Dependent Role="Quizes">
+              <PropertyRef Name="IdProgress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__QuizQuest__IdQue__44FF419A">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="QuizQuestions" Type="Self.QuizQuestions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="IdQuestion" />
+            </Principal>
+            <Dependent Role="QuizQuestions">
+              <PropertyRef Name="IdQuestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__QuizQuest__IdQui__440B1D61">
+          <End Role="Quizes" Type="Self.Quizes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="QuizQuestions" Type="Self.QuizQuestions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quizes">
+              <PropertyRef Name="IdQuiz" />
+            </Principal>
+            <Dependent Role="QuizQuestions">
+              <PropertyRef Name="IdQuiz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rotors__IdSetOfR__49C3F6B7">
           <End Role="SetOfRotors" Type="Self.SetOfRotors" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -136,20 +200,35 @@
         <EntityContainer Name="Хранилище EnigmaBaseModelContainer">
           <EntitySet Name="EnigmaMachine" EntityType="Self.EnigmaMachine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lessons" EntityType="Self.Lessons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quizes" EntityType="Self.Quizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuizQuestions" EntityType="Self.QuizQuestions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reflectors" EntityType="Self.Reflectors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rotors" EntityType="Self.Rotors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SetOfRotors" EntityType="Self.SetOfRotors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserProgress" EntityType="Self.UserProgress" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__EnigmaMac__IdRef__46E78A0C" Association="Self.FK__EnigmaMac__IdRef__46E78A0C">
+          <AssociationSet Name="FK__EnigmaMac__IdRef__4F7CD00D" Association="Self.FK__EnigmaMac__IdRef__4F7CD00D">
             <End Role="Reflectors" EntitySet="Reflectors" />
             <End Role="EnigmaMachine" EntitySet="EnigmaMachine" />
           </AssociationSet>
-          <AssociationSet Name="FK__EnigmaMac__IdSet__45F365D3" Association="Self.FK__EnigmaMac__IdSet__45F365D3">
+          <AssociationSet Name="FK__EnigmaMac__IdSet__4E88ABD4" Association="Self.FK__EnigmaMac__IdSet__4E88ABD4">
             <End Role="SetOfRotors" EntitySet="SetOfRotors" />
             <End Role="EnigmaMachine" EntitySet="EnigmaMachine" />
           </AssociationSet>
-          <AssociationSet Name="FK__Rotors__IdSetOfR__412EB0B6" Association="Self.FK__Rotors__IdSetOfR__412EB0B6">
+          <AssociationSet Name="FK__Quizes__IdProgre__412EB0B6" Association="Self.FK__Quizes__IdProgre__412EB0B6">
+            <End Role="UserProgress" EntitySet="UserProgress" />
+            <End Role="Quizes" EntitySet="Quizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__QuizQuest__IdQue__44FF419A" Association="Self.FK__QuizQuest__IdQue__44FF419A">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="QuizQuestions" EntitySet="QuizQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__QuizQuest__IdQui__440B1D61" Association="Self.FK__QuizQuest__IdQui__440B1D61">
+            <End Role="Quizes" EntitySet="Quizes" />
+            <End Role="QuizQuestions" EntitySet="QuizQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rotors__IdSetOfR__49C3F6B7" Association="Self.FK__Rotors__IdSetOfR__49C3F6B7">
             <End Role="SetOfRotors" EntitySet="SetOfRotors" />
             <End Role="Rotors" EntitySet="Rotors" />
           </AssociationSet>
@@ -174,8 +253,8 @@
           <Property Name="IdEnigmaMachine" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdSetOfRotors" Type="Int32" />
           <Property Name="IdReflector" Type="Int32" />
-          <NavigationProperty Name="Reflector" Relationship="Self.FK__EnigmaMac__IdRef__46E78A0C" FromRole="EnigmaMachine" ToRole="Reflectors" />
-          <NavigationProperty Name="SetOfRotor" Relationship="Self.FK__EnigmaMac__IdSet__45F365D3" FromRole="EnigmaMachine" ToRole="SetOfRotors" />
+          <NavigationProperty Name="Reflector" Relationship="Self.FK__EnigmaMac__IdRef__4F7CD00D" FromRole="EnigmaMachine" ToRole="Reflectors" />
+          <NavigationProperty Name="SetOfRotor" Relationship="Self.FK__EnigmaMac__IdSet__4E88ABD4" FromRole="EnigmaMachine" ToRole="SetOfRotors" />
         </EntityType>
         <EntityType Name="Lesson">
           <Key>
@@ -187,6 +266,23 @@
           <Property Name="Concepts" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserProgresses" Relationship="Self.FK__UserProgr__IdLes__3C69FB99" FromRole="Lessons" ToRole="UserProgress" />
         </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="IdQuestion" />
+          </Key>
+          <Property Name="IdQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Quizes" Relationship="Self.QuizQuestions" FromRole="Questions" ToRole="Quizes" />
+        </EntityType>
+        <EntityType Name="Quize">
+          <Key>
+            <PropertyRef Name="IdQuiz" />
+          </Key>
+          <Property Name="IdQuiz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProgress" Type="Int32" />
+          <NavigationProperty Name="UserProgress" Relationship="Self.FK__Quizes__IdProgre__412EB0B6" FromRole="Quizes" ToRole="UserProgress" />
+          <NavigationProperty Name="Questions" Relationship="Self.QuizQuestions" FromRole="Quizes" ToRole="Questions" />
+        </EntityType>
         <EntityType Name="Reflector">
           <Key>
             <PropertyRef Name="IdReflector" />
@@ -194,7 +290,7 @@
           <Property Name="IdReflector" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameOfReflector" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="Dictionary" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="EnigmaMachines" Relationship="Self.FK__EnigmaMac__IdRef__46E78A0C" FromRole="Reflectors" ToRole="EnigmaMachine" />
+          <NavigationProperty Name="EnigmaMachines" Relationship="Self.FK__EnigmaMac__IdRef__4F7CD00D" FromRole="Reflectors" ToRole="EnigmaMachine" />
         </EntityType>
         <EntityType Name="Rotor">
           <Key>
@@ -203,7 +299,7 @@
           <Property Name="IdRotor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdSetOfRotors" Type="Int32" />
           <Property Name="Dictionary" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="SetOfRotor" Relationship="Self.FK__Rotors__IdSetOfR__412EB0B6" FromRole="Rotors" ToRole="SetOfRotors" />
+          <NavigationProperty Name="SetOfRotor" Relationship="Self.FK__Rotors__IdSetOfR__49C3F6B7" FromRole="Rotors" ToRole="SetOfRotors" />
         </EntityType>
         <EntityType Name="SetOfRotor">
           <Key>
@@ -211,8 +307,8 @@
           </Key>
           <Property Name="IdSetOfRotors" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameOfSetOfRotors" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="EnigmaMachines" Relationship="Self.FK__EnigmaMac__IdSet__45F365D3" FromRole="SetOfRotors" ToRole="EnigmaMachine" />
-          <NavigationProperty Name="Rotors" Relationship="Self.FK__Rotors__IdSetOfR__412EB0B6" FromRole="SetOfRotors" ToRole="Rotors" />
+          <NavigationProperty Name="EnigmaMachines" Relationship="Self.FK__EnigmaMac__IdSet__4E88ABD4" FromRole="SetOfRotors" ToRole="EnigmaMachine" />
+          <NavigationProperty Name="Rotors" Relationship="Self.FK__Rotors__IdSetOfR__49C3F6B7" FromRole="SetOfRotors" ToRole="Rotors" />
         </EntityType>
         <EntityType Name="UserProgress">
           <Key>
@@ -223,6 +319,7 @@
           <Property Name="IdLesson" Type="Int32" />
           <Property Name="Completed" Type="Boolean" />
           <NavigationProperty Name="Lesson" Relationship="Self.FK__UserProgr__IdLes__3C69FB99" FromRole="UserProgress" ToRole="Lessons" />
+          <NavigationProperty Name="Quizes" Relationship="Self.FK__Quizes__IdProgre__412EB0B6" FromRole="UserProgress" ToRole="Quizes" />
           <NavigationProperty Name="User" Relationship="Self.FK__UserProgr__IdUse__3B75D760" FromRole="UserProgress" ToRole="Users" />
         </EntityType>
         <EntityType Name="User">
@@ -235,7 +332,7 @@
           <Property Name="PasswordOfUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserProgresses" Relationship="Self.FK__UserProgr__IdUse__3B75D760" FromRole="Users" ToRole="UserProgress" />
         </EntityType>
-        <Association Name="FK__EnigmaMac__IdRef__46E78A0C">
+        <Association Name="FK__EnigmaMac__IdRef__4F7CD00D">
           <End Role="Reflectors" Type="Self.Reflector" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -249,7 +346,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EnigmaMac__IdSet__45F365D3">
+        <Association Name="FK__EnigmaMac__IdSet__4E88ABD4">
           <End Role="SetOfRotors" Type="Self.SetOfRotor" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -277,7 +374,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Rotors__IdSetOfR__412EB0B6">
+        <Association Name="FK__Quizes__IdProgre__412EB0B6">
+          <End Role="UserProgress" Type="Self.UserProgress" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Quizes" Type="Self.Quize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProgress">
+              <PropertyRef Name="IdProgress" />
+            </Principal>
+            <Dependent Role="Quizes">
+              <PropertyRef Name="IdProgress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rotors__IdSetOfR__49C3F6B7">
           <End Role="SetOfRotors" Type="Self.SetOfRotor" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -305,19 +416,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="QuizQuestions">
+          <End Role="Questions" Type="Self.Question" Multiplicity="*" />
+          <End Role="Quizes" Type="Self.Quize" Multiplicity="*" />
+        </Association>
         <EntityContainer Name="EnigmaBase" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="EnigmaMachines" EntityType="Self.EnigmaMachine" />
           <EntitySet Name="Lessons" EntityType="Self.Lesson" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="Quizes" EntityType="Self.Quize" />
           <EntitySet Name="Reflectors" EntityType="Self.Reflector" />
           <EntitySet Name="Rotors" EntityType="Self.Rotor" />
           <EntitySet Name="SetOfRotors" EntityType="Self.SetOfRotor" />
           <EntitySet Name="UserProgresses" EntityType="Self.UserProgress" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK__EnigmaMac__IdRef__46E78A0C" Association="Self.FK__EnigmaMac__IdRef__46E78A0C">
+          <AssociationSet Name="FK__EnigmaMac__IdRef__4F7CD00D" Association="Self.FK__EnigmaMac__IdRef__4F7CD00D">
             <End Role="Reflectors" EntitySet="Reflectors" />
             <End Role="EnigmaMachine" EntitySet="EnigmaMachines" />
           </AssociationSet>
-          <AssociationSet Name="FK__EnigmaMac__IdSet__45F365D3" Association="Self.FK__EnigmaMac__IdSet__45F365D3">
+          <AssociationSet Name="FK__EnigmaMac__IdSet__4E88ABD4" Association="Self.FK__EnigmaMac__IdSet__4E88ABD4">
             <End Role="SetOfRotors" EntitySet="SetOfRotors" />
             <End Role="EnigmaMachine" EntitySet="EnigmaMachines" />
           </AssociationSet>
@@ -325,13 +442,21 @@
             <End Role="Lessons" EntitySet="Lessons" />
             <End Role="UserProgress" EntitySet="UserProgresses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Rotors__IdSetOfR__412EB0B6" Association="Self.FK__Rotors__IdSetOfR__412EB0B6">
+          <AssociationSet Name="FK__Quizes__IdProgre__412EB0B6" Association="Self.FK__Quizes__IdProgre__412EB0B6">
+            <End Role="UserProgress" EntitySet="UserProgresses" />
+            <End Role="Quizes" EntitySet="Quizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rotors__IdSetOfR__49C3F6B7" Association="Self.FK__Rotors__IdSetOfR__49C3F6B7">
             <End Role="SetOfRotors" EntitySet="SetOfRotors" />
             <End Role="Rotors" EntitySet="Rotors" />
           </AssociationSet>
           <AssociationSet Name="FK__UserProgr__IdUse__3B75D760" Association="Self.FK__UserProgr__IdUse__3B75D760">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserProgress" EntitySet="UserProgresses" />
+          </AssociationSet>
+          <AssociationSet Name="QuizQuestions" Association="Self.QuizQuestions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Quizes" EntitySet="Quizes" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -356,6 +481,22 @@
                 <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="Concepts" ColumnName="Concepts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="EnigmaBaseModel.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quizes">
+            <EntityTypeMapping TypeName="EnigmaBaseModel.Quize">
+              <MappingFragment StoreEntitySet="Quizes">
+                <ScalarProperty Name="IdQuiz" ColumnName="IdQuiz" />
+                <ScalarProperty Name="IdProgress" ColumnName="IdProgress" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -405,6 +546,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="QuizQuestions" TypeName="EnigmaBaseModel.QuizQuestions" StoreEntitySet="QuizQuestions">
+            <EndProperty Name="Questions">
+              <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+            </EndProperty>
+            <EndProperty Name="Quizes">
+              <ScalarProperty Name="IdQuiz" ColumnName="IdQuiz" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

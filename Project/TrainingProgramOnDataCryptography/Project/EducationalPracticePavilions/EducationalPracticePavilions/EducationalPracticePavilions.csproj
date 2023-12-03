@@ -92,6 +92,12 @@
     <Compile Include="Model\Lesson.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Question.cs">
+      <DependentUpon>EnigmaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Quize.cs">
+      <DependentUpon>EnigmaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Reflector.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
@@ -104,11 +110,11 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\UserProgress.cs">
-      <DependentUpon>EnigmaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="UserControlls\Questions.xaml.cs">
       <DependentUpon>Questions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserProgress.cs">
+      <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\LessonVM.cs" />
     <Compile Include="View\Authorization.xaml.cs">
@@ -214,6 +220,9 @@
     <Resource Include="Resources\NullPhoto.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\emblem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\EnigmaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EnigmaModel.edmx</DependentUpon>
@@ -224,7 +233,6 @@
       <DependentUpon>EnigmaModel.edmx</DependentUpon>
       <LastGenOutput>EnigmaModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\emblem.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

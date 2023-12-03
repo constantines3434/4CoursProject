@@ -30,22 +30,18 @@
                     FontSize="20"/>
         <usercontrols:Questions
                                QuestionContent="Test1"
-                               QuestionGroupName="Test"
                                Grid.Column="1"
                                Grid.Row="0"/>
         <usercontrols:Questions
                                QuestionContent="Test2"
-                               QuestionGroupName="Test"
                                Grid.Column="1"
                                Grid.Row="1"/>
         <usercontrols:Questions
                                QuestionContent="Test3"
-                               QuestionGroupName="Test"
                                Grid.Column="1"
                                Grid.Row="2"/>
         <usercontrols:Questions
                                QuestionContent="Test4"
-                               QuestionGroupName="Test"
                                Grid.Column="1"
                                Grid.Row="3"/>
         <Button

@@ -27,6 +27,7 @@ namespace EducationalPracticePavilions.Model
             return context_;
         }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -34,6 +35,8 @@ namespace EducationalPracticePavilions.Model
     
         public virtual DbSet<EnigmaMachine> EnigmaMachines { get; set; }
         public virtual DbSet<Lesson> Lessons { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<Quize> Quizes { get; set; }
         public virtual DbSet<Reflector> Reflectors { get; set; }
         public virtual DbSet<Rotor> Rotors { get; set; }
         public virtual DbSet<SetOfRotor> SetOfRotors { get; set; }

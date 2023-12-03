@@ -10,7 +10,6 @@
         <RadioButton
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            Content="{Binding QuestionContent}"
-            GroupName="{Binding QuestionGroupName}"/>
+            Content="{Binding QuestionContent}"/>
     </Grid>
 </UserControl>
