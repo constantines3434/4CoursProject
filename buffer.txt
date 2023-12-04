@@ -11,3 +11,17 @@
 логин1
 пароль1
 
+else
+            {
+                MessageBox.Show("Опрос");
+                //переход на опрос
+            //    if (quize == null)
+            //    {
+            //        quize = new QuestionsAfterLessons();
+            //        quize.Show();
+            //        MainWindow.GetWindow(this)?.Close();
+            //    }
+            //    else
+            //        quize.Activate();
+            }
+

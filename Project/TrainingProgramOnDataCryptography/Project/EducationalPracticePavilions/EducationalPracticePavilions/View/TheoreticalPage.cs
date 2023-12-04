@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 namespace EducationalPracticePavilions.View
 {
     //сделать словарь -> кинь в Model
-    //число уроков в теме
+    //количество уроков в теме
     enum CountLessonsInTheme
     {
         First = 2,
@@ -28,62 +28,85 @@ namespace EducationalPracticePavilions.View
     };
     public partial class TheoreticalPage : Page
     {
-        private List<UserProgress> userProgresses;
         private LessonVM lessonViewModel;
-        public static QuestionsAfterLessons quize;
-        private int curentLesson = 0;
-        private int currentThemeLessonsCount = (int)CountLessonsInTheme.First; 
-        // Устанавливаем начальное количество уроков для первой темы
+        private List<List<Lesson>> lessonsByTheme = new List<List<Lesson>>();
+        private int currentLessonIndex = 0;
+        private CountLessonsInTheme currentTheme = CountLessonsInTheme.First;
+        private int[] lessonCounts = { 2, 1, 2 }; // Соответствие количества уроков для каждой темы из enum
+        private List<UserProgress> Progress = EnigmaBase.GetContext().UserProgresses.ToList();
+
         public TheoreticalPage()
         {
             InitializeComponent();
             lessonViewModel = new LessonVM();
             DataContext = lessonViewModel;
 
-            // Получение данных о прогрессе пользователя из базы данных
-            userProgresses = EnigmaBase.GetContext().UserProgresses.ToList();
+            // Заполнение уроков для каждой темы в соответствии с их количеством
+            int lessonIndex = 0;
+            foreach (var count in lessonCounts)
+            {
+                var lessons = new List<Lesson>();
+                for (int i = 0; i < count; i++)
+                {
+                    if (lessonIndex < lessonViewModel.Lessons.Count)
+                    {
+                        lessons.Add(lessonViewModel.Lessons[lessonIndex]);
+                        lessonIndex++;
+                    }
+                }
+                lessonsByTheme.Add(lessons);
+            }
 
-            // Определение прогресса пользователя для каждой темы
-            int completedLessonsFirstTheme = userProgresses.Count(up => up.IdLesson <= (int)CountLessonsInTheme.First && up.Completed.GetValueOrDefault());
-            //int completedLessonsSecondTheme = userProgresses.Count(up => up.IdLesson > (int)CountLessonsInTheme.First && up.IdLesson <= ((int)CountLessonsInTheme.First + (int)CountLessonsInTheme.Second) && up.Completed.GetValueOrDefault());
-            //int completedLessonsThirdTheme = userProgresses.Count(up => up.IdLesson > ((int)CountLessonsInTheme.First + (int)CountLessonsInTheme.Second) && up.Completed.GetValueOrDefault());
+            // Показываем уроки первой темы
+            ShowLesson(currentLessonIndex);
+            UpdateProgressBar();
+        }
 
-            // Обновление переменных в соответствии с прогрессом пользователя
-            currentThemeLessonsCount = completedLessonsFirstTheme;// + completedLessonsSecondTheme + completedLessonsThirdTheme;
-            progressBar.Maximum = currentThemeLessonsCount - 1;
+        private void ShowLesson(int lessonIndex)
+        {
+            int themeIndex = (int)currentTheme;
+            if (themeIndex < lessonsByTheme.Count && lessonIndex >= 0 && lessonIndex < lessonsByTheme[themeIndex].Count)
+            {
+                lessonViewModel.SelectedLesson = lessonsByTheme[themeIndex][lessonIndex];
+            }
+            else
+            {
+                // Обработка случая, когда lessonIndex выходит за пределы доступных уроков для текущей темы
+                // Можно показать сообщение об ошибке или выполнить другие действия
+            }
+        }
 
-            // Найти урок, который пользователь еще не прошел
-            Lesson nextLesson = lessonViewModel.Lessons.FirstOrDefault(l => userProgresses.All(up => up.IdLesson != l.IdLesson));
-
-            // Если есть еще не завершенные уроки, выбрать первый из них
-            lessonViewModel.SelectedLesson = nextLesson ?? lessonViewModel.Lessons.FirstOrDefault();
-
+        private void UpdateProgressBar()
+        {
             progressBar.Minimum = 0;
-            progressBar.Value = 0;
+            progressBar.Maximum = lessonCounts[(int)currentTheme] - 1;
+            progressBar.Value = currentLessonIndex;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            if (curentLesson < currentThemeLessonsCount - 1)
+            if (currentLessonIndex < lessonCounts[(int)currentTheme] - 1)
             {
-                lessonViewModel.SelectedLesson = lessonViewModel.Lessons[++curentLesson];
-                progressBar.Value = curentLesson;
+                currentLessonIndex++;
+                ShowLesson(currentLessonIndex);
+                progressBar.Value = currentLessonIndex;
             }
             else
             {
                 MessageBox.Show("Опрос");
-                //переход на опрос
-                if (quize == null)
+                if (currentTheme < CountLessonsInTheme.Third)
                 {
-                    quize = new QuestionsAfterLessons();
-                    quize.Show();
-                    MainWindow.GetWindow(this)?.Close();
+                    currentTheme++; // Переходим к следующей теме
+                    currentLessonIndex = 0;
+                    ShowLesson(currentLessonIndex);
+                    UpdateProgressBar();
                 }
                 else
-                    quize.Activate();
+                {
+                    MessageBox.Show("Это был последний опрос");
+                }
             }
         }
-
     }
+
 }

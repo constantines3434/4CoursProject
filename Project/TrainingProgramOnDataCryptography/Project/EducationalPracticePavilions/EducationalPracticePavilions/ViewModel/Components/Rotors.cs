@@ -99,35 +99,26 @@ namespace Enigma
 			this.Reflector = reflector;
 		}
 
-        public char Enter(char @char, Plugboard pb)
-        {
-            char result = @char;
+		public char Enter(char @char, Plugboard pb)
+		{
+			char result = @char;
 
-            // Применение Plugboard перед шифрованием
-            if (pb.Exist(result))
-                result = pb.Get(result);
+			if (pb.Exist(result))
+				result = pb.Get(result);
 
-            // Прохождение через роторы
-            for (int i = 0; i < this._list.Count; i++)
-                result = this._list[i].Enter(result);
+			for (int i = 0; i < this._list.Count; i++)
+				result = this._list[i].Enter(result);
+			result = this.Reflector.Reverse(result);
+			for (int i = this._list.Count - 1; i >= 0; i--)
+				result = this._list[i].Reverse(result);
+			result = this._keyboard.Reverse(result);
 
-            // Прохождение через отражатель
-            result = this.Reflector.Reverse(result);
+			if (pb.Exist(result))
+				result = pb.Get(result);
 
-            // Обратное прохождение через роторы
-            for (int i = this._list.Count - 1; i >= 0; i--)
-                result = this._list[i].Reverse(result);
+			return result;
+		}
 
-            // Обратное прохождение через клавиатуру
-            result = this._keyboard.Reverse(result);
-
-            // Применение Plugboard после шифрования
-            if (pb.Exist(result))
-                result = pb.Get(result);
-
-            return result;
-        }
-
-    }
+	}
 
 }
