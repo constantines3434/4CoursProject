@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationalPracticePavilions", "EducationalPracticePavilions\EducationalPracticePavilions.csproj", "{EA55BDA3-958A-405A-8693-67C0A3C38616}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyEnigma", "..\..\..\..\..\..\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\MyEnigma\MyEnigma\MyEnigma.csproj", "{FA70A8AB-36D6-482F-B263-910EA71E1826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingEnigma", "..\..\..\..\Enigma\4CourseProjectEnigma\Examples\1\Enigma-main\WorkingEnigma\WorkingEnigma.csproj", "{31FD4FDF-827C-477F-A785-9BCBEEA53C2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{EA55BDA3-958A-405A-8693-67C0A3C38616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA55BDA3-958A-405A-8693-67C0A3C38616}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA55BDA3-958A-405A-8693-67C0A3C38616}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA70A8AB-36D6-482F-B263-910EA71E1826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA70A8AB-36D6-482F-B263-910EA71E1826}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA70A8AB-36D6-482F-B263-910EA71E1826}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA70A8AB-36D6-482F-B263-910EA71E1826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FD4FDF-827C-477F-A785-9BCBEEA53C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FD4FDF-827C-477F-A785-9BCBEEA53C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FD4FDF-827C-477F-A785-9BCBEEA53C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FD4FDF-827C-477F-A785-9BCBEEA53C2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
