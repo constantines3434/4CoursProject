@@ -21,7 +21,9 @@
 		/// </summary>
 		public static class EnigmaI
 		{
-
+			/// <summary>
+			/// статичное значение ротера
+			/// </summary>
 			public static Rotor I
 			{
 				get => new Rotor(Type.Rotor, "EKMFLGDQVZNTOWYHXUSPAIBRCJ")

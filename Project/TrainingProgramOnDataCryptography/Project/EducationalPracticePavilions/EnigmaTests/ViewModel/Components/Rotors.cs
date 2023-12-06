@@ -7,30 +7,20 @@ namespace Enigma
 	/// </summary>
 	public class Rotors
 	{
-
 		private List<Rotor> _list = new List<Rotor>();
+		//+
+		private Rotor _keyboard = new Rotor("ABCDEFGHIJKLMNOPQRSTUVWXYZ", '\0', '\0');
 
-        public static Rotor Keyboard
-        {
-			get => new Rotor("ABCDEFGHIJKLMNOPQRSTUVWXYZ", '\0', '\0')
-            {
-                Notch = '\0',
-                Turnover = '\0',
-            };
-        }
-
-
-        private Rotor _keyboard = Keyboard;
-
-
-		public Rotor Reflector { get; private set; }
+        public Rotor Reflector { get; private set; }
 		/// <summary>
 		/// исправить Рефлектор
 		/// </summary>
+		//+
 		public Rotors()
 		{
-			this.Reflector = HistoricData.Reflectors.ReflectorB;
-		}
+            this.Reflector = HistoricData.Reflectors.ReflectorB;
+            //this.Reflector = Reflector;//ReflectorB new Rotor("YRUHQSLDPXNGOKMIEBFZCWVJAT", '\0', '\0');
+        }
 
 		/// <summary>
 		/// статичные ротеры
@@ -38,29 +28,16 @@ namespace Enigma
 		/// <param name="type"></param>
 		/// <param name="head"></param>
 		/// <exception cref="Exceptions.EnigmaRotorsException"></exception>
+		//+
 		public void Add(ref Rotor ChoicedRotor, char head)
 		{
 			Rotor rotor;
 			rotor = ChoicedRotor;
-			//switch (type)
-			//{
-			//	case RotorType.Rotor_I:
-			//		rotor = HistoricData.EnigmaI.I;
-			//		break;
-			//	case RotorType.Rotor_II:
-			//		rotor = HistoricData.EnigmaI.II;
-			//		break;
-			//	case RotorType.Rotor_III:
-			//		rotor = HistoricData.EnigmaI.III;
-			//		break;
-			//	default:
-			//		throw new Exceptions.EnigmaRotorsException();
-			//}
 			rotor.SetHead(head);
-			this.Add(rotor);
+			this.Add(ref rotor);
 		}
 
-		public void Add(Rotor rotor) 
+		public void Add(ref Rotor rotor) 
 		{
 			rotor.IsFirst = this._list.Count == 0;
 			if (rotor.IsFirst)
@@ -89,36 +66,21 @@ namespace Enigma
 			for (int i = 0; i < heads.Length; i++)
 				this._list[i].SetHead(heads[i]);
 		}
-
+		//+
 		public void SetReflector(ref Rotor reflector)
 		{
-			//switch (type)
-			//{
-			//	case ReflectorType.UWK_A:
-			//		rotor = HistoricData.Reflectors.ReflectorA;
-			//		break;
-			//	case ReflectorType.UWK_B:
-			//		rotor = HistoricData.Reflectors.ReflectorB;
-			//		break;
-			//	case ReflectorType.UWK_C:
-			//		rotor = HistoricData.Reflectors.ReflectorC;
-			//		break;
-			//	default:
-			//		throw new Exceptions.EnigmaRotorsException();
-			//}
-
 			this.Reflector = reflector;
 			if(this._list.Count > 0)
 				this.Reflector.Prev = this._list[this._list.Count - 1];
 		}
 
-		public void SetReflector(Rotor reflector)
-		{
-			if (reflector.Type != Type.Reflector)
-				throw new Exceptions.EnigmaRotorsException();
+		//public void SetReflector(Rotor reflector)
+		//{
+		//	if (reflector.Type != Type.Reflector)
+		//		throw new Exceptions.EnigmaRotorsException();
 
-			this.Reflector = reflector;
-		}
+		//	this.Reflector = reflector;
+		//}
 
 		public char Enter(char @char, Plugboard pb)
 		{
@@ -139,7 +101,5 @@ namespace Enigma
 
 			return result;
 		}
-
 	}
-
 }

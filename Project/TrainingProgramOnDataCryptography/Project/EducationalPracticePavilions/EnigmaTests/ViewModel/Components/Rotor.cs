@@ -39,7 +39,12 @@ namespace Enigma
 			this.Notch = Notch;
 			this.Turnover = Turnover;
 		}
-		public static int GetAlphabetCharIndex(char @char) => Array.IndexOf(Common.ALPHABET, char.ToUpper(@char));
+        public Rotor(string chars)
+        {
+            //this.Type = type;
+            this._chars = chars.ToCharArray();
+        }
+        public static int GetAlphabetCharIndex(char @char) => Array.IndexOf(Common.ALPHABET, char.ToUpper(@char));
 		
 		public char GetFromAlphabet(char @char)
 		{

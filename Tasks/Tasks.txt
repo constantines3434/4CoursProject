@@ -4,3 +4,14 @@ User проходит Lesson ->
 Enigma
 1) обрабатывать роторы
 	и рефлектор в ViewModel
+
+2) Сейчас ротеры и рефлектор задаются
+	статично в HistoricData
+	Надо создавать объекты
+	в Program и кидать их в 
+	Add в Rotors
+3) вынести свойства и Rotor в Model
+
+Ожидается
+Output: CAK OAZIJ MOGPG ZTP ATOWC FIAQ EJM ZCKT SGO
+

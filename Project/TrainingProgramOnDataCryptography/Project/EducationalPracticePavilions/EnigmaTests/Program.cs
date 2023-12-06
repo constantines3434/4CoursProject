@@ -20,13 +20,16 @@ namespace Enigma
             Rotor rotor2 = new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", 'M', 'E');
             Rotor rotor3 = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", 'D', 'V');
 
+			//+
             e.Rotors.Add(ref rotor1, 'A');
 			e.Rotors.Add(ref rotor2, 'B');
 			e.Rotors.Add(ref rotor3, 'C');
 
             //Reflector
-            Rotor reflector = new Rotor("EJMZALYXVBWFCRQUONTSPIKHGD", '\0', '\0');
-
+			//+
+            Rotor reflector = new Rotor("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+            //B YRUHQSLDPXNGOKMIEBFZCWVJAT
+            //C FVPJIAOYEDRZXWGCTKUQSBNMHL
             e.Rotors.SetReflector(ref reflector);
 
 			string result = e.Encrypt(data);

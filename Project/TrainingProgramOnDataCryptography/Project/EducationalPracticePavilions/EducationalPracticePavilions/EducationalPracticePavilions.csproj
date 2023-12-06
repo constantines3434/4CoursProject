@@ -125,7 +125,6 @@
     <Compile Include="ViewModel\Exceptions\EnigmaException.cs" />
     <Compile Include="ViewModel\Exceptions\EnigmaPlugboardException.cs" />
     <Compile Include="ViewModel\Exceptions\EnigmaRotorsException.cs" />
-    <Compile Include="ViewModel\HistoricData.cs" />
     <Compile Include="ViewModel\LessonVM.cs" />
     <Compile Include="ViewModel\Program.cs" />
     <Compile Include="View\Authorization.xaml.cs">
