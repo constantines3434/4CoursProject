@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Enigma
+namespace WorkingEnigma
 {
 
 	public class Rotor

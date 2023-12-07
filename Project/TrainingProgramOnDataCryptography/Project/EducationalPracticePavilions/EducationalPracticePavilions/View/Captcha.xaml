@@ -1,9 +1,9 @@
-﻿<Window x:Class="EducationalPracticePavilions.View.Captcha"
+﻿<Window x:Class="EnigmaApi.View.Captcha"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EducationalPracticePavilions.View"
+        xmlns:local="clr-namespace:EnigmaApi.View"
         mc:Ignorable="d"
         Title="Captcha" Height="260" Width="250">
     

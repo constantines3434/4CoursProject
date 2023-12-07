@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EducationalPracticePavilions.Model
+namespace EnigmaApi.Model
 {
     using System;
     using System.Data.Entity;

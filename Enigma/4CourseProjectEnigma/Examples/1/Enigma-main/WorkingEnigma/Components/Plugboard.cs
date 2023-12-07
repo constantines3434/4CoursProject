@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Enigma
+namespace WorkingEnigma
 {
 	public class Plugboard
 	{

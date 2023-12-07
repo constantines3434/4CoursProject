@@ -1,4 +1,4 @@
-﻿namespace Enigma
+﻿namespace WorkingEnigma
 {
 
 	public static class HistoricData

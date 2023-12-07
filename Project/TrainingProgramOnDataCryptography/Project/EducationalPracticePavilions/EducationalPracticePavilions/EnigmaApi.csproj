@@ -116,16 +116,6 @@
     <Compile Include="Model\UserProgress.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Common\Common.cs" />
-    <Compile Include="ViewModel\Common\Enums.cs" />
-    <Compile Include="ViewModel\Components\Plugboard.cs" />
-    <Compile Include="ViewModel\Components\Rotor.cs" />
-    <Compile Include="ViewModel\Components\Rotors.cs" />
-    <Compile Include="ViewModel\Enigma.cs" />
-    <Compile Include="ViewModel\Exceptions\EnigmaException.cs" />
-    <Compile Include="ViewModel\Exceptions\EnigmaPlugboardException.cs" />
-    <Compile Include="ViewModel\Exceptions\EnigmaRotorsException.cs" />
-    <Compile Include="ViewModel\LessonVM.cs" />
     <Compile Include="ViewModel\Program.cs" />
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
@@ -228,7 +218,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Enigma\4CourseProjectEnigma\Examples\1\Enigma-main\WorkingEnigma\WorkingEnigma.csproj">
+      <Project>{31fd4fdf-827c-477f-a785-9bcbeea53c2b}</Project>
+      <Name>WorkingEnigma</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using WorkingEnigma;
 
-namespace EducationalPracticePavilions
+namespace EnigmaApi
 {
     internal class Manager
     {

@@ -4,11 +4,12 @@ using System.Text;
 
 [assembly: InternalsVisibleTo("Tests")]
 
-namespace Enigma
+namespace WorkingEnigma
 {
 
 	/// <summary>
-	/// Enigma Machine emulator
+	/// 
+	/// Machine emulator
 	/// </summary>
 	public class Enigma
 	{

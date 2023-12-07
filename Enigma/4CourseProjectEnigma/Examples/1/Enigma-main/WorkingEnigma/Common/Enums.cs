@@ -1,4 +1,4 @@
-﻿namespace Enigma
+﻿namespace WorkingEnigma 
 {
 	public enum Type : uint
 	{

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace EducationalPracticePavilions.View
+namespace EnigmaApi.View
 {
     /// <summary>
     /// Логика взаимодействия для QuestionsAfterLessons.xaml

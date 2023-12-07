@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EducationalPracticePavilions.UserControlls
+namespace EnigmaApi.UserControlls
 {
     /// <summary>
     /// Логика взаимодействия для Questions.xaml

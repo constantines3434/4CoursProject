@@ -1,12 +1,12 @@
 ﻿using System;
-
-namespace Enigma
+using WorkingEnigma;
+namespace EnigmaApi
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Enigma machine emulator:");
+			Console.WriteLine("EnigmaApi machine emulator:");
 			
 			string data = "The quick brown fox jumps over the lazy dog";
 			Enigma e = new Enigma();

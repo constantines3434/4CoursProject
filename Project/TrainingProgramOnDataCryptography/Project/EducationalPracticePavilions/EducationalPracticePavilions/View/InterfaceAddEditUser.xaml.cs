@@ -1,4 +1,6 @@
-﻿using EducationalPracticePavilions.Model;
+﻿using 
+    
+    .Model;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -17,7 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EducationalPracticePavilions.View
+namespace EnigmaApi.View
 {
     /// <summary>
     /// Логика взаимодействия для InterfaceAddEditUser.xaml

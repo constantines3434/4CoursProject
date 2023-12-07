@@ -1,4 +1,6 @@
-﻿// Создание кода T4 для модели "C:\VS Projects\4CoursProject\Project\TrainingProgramOnDataCryptography\Project\EducationalPracticePavilions\EducationalPracticePavilions\Model\EnigmaModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\VS Projects\4CoursProject\Project\TrainingProgramOnDataCryptography\Project\
+//
+// \EnigmaApi\Model\EnigmaModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

@@ -6,7 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace EducationalPracticePavilions
+namespace 
+
+
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml

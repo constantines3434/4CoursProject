@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EducationalPracticePavilions.View
+namespace 
+    
+    .View
 {
     /// <summary>
     /// Логика взаимодействия для Captcha.xaml
