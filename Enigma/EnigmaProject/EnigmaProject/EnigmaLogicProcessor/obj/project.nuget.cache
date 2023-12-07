@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z16pmbJ/lclRPZWRwV5QRoolwlCyXEXrDVwVFSp5cYIap97Xn/A7pqLjNTENMR2pywOjc9MOF/ISA1bIi9W5MQ==",
+  "success": true,
+  "projectFilePath": "C:\\VS Projects\\4CoursProject\\Enigma\\EnigmaProject\\EnigmaProject\\EnigmaLogicProcessor\\EnigmaLogicProcessor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.24\\microsoft.windowsdesktop.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.24\\microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.24\\microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.24\\microsoft.netcore.app.host.win-x64.6.0.24.nupkg.sha512"
+  ],
+  "logs": []
+}

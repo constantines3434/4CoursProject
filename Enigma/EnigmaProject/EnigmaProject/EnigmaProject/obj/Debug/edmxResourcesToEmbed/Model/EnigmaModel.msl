@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище EnigmaBaseModelContainer" CdmEntityContainer="EnigmaBase">
+    <EntitySetMapping Name="EnigmaMachines">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.EnigmaMachine">
+        <MappingFragment StoreEntitySet="EnigmaMachine">
+          <ScalarProperty Name="IdEnigmaMachine" ColumnName="IdEnigmaMachine" />
+          <ScalarProperty Name="IdSetOfRotors" ColumnName="IdSetOfRotors" />
+          <ScalarProperty Name="IdReflector" ColumnName="IdReflector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lessons">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.Lesson">
+        <MappingFragment StoreEntitySet="Lessons">
+          <ScalarProperty Name="IdLesson" ColumnName="IdLesson" />
+          <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Concepts" ColumnName="Concepts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.Question">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quizes">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.Quize">
+        <MappingFragment StoreEntitySet="Quizes">
+          <ScalarProperty Name="IdQuiz" ColumnName="IdQuiz" />
+          <ScalarProperty Name="IdProgress" ColumnName="IdProgress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reflectors">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.Reflector">
+        <MappingFragment StoreEntitySet="Reflectors">
+          <ScalarProperty Name="IdReflector" ColumnName="IdReflector" />
+          <ScalarProperty Name="NameOfReflector" ColumnName="NameOfReflector" />
+          <ScalarProperty Name="Dictionary" ColumnName="Dictionary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rotors">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.Rotor">
+        <MappingFragment StoreEntitySet="Rotors">
+          <ScalarProperty Name="IdRotor" ColumnName="IdRotor" />
+          <ScalarProperty Name="IdSetOfRotors" ColumnName="IdSetOfRotors" />
+          <ScalarProperty Name="Dictionary" ColumnName="Dictionary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SetOfRotors">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.SetOfRotor">
+        <MappingFragment StoreEntitySet="SetOfRotors">
+          <ScalarProperty Name="IdSetOfRotors" ColumnName="IdSetOfRotors" />
+          <ScalarProperty Name="NameOfSetOfRotors" ColumnName="NameOfSetOfRotors" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProgresses">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.UserProgress">
+        <MappingFragment StoreEntitySet="UserProgress">
+          <ScalarProperty Name="IdProgress" ColumnName="IdProgress" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="IdLesson" ColumnName="IdLesson" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="EnigmaBaseModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="LoginOfUser" ColumnName="LoginOfUser" />
+          <ScalarProperty Name="RoleOfUser" ColumnName="RoleOfUser" />
+          <ScalarProperty Name="PasswordOfUser" ColumnName="PasswordOfUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="QuizQuestions" TypeName="EnigmaBaseModel.QuizQuestions" StoreEntitySet="QuizQuestions">
+      <EndProperty Name="Questions">
+        <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+      </EndProperty>
+      <EndProperty Name="Quizes">
+        <ScalarProperty Name="IdQuiz" ColumnName="IdQuiz" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
