@@ -3,5 +3,4 @@ User проходит Lesson ->
 
 Enigma
 1) Plugboard
-2) Rotors
 3) Reflector

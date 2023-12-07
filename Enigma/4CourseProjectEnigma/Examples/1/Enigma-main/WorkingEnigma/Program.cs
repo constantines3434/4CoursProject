@@ -8,7 +8,7 @@ namespace Enigma
         {
             Console.WriteLine("Enigma machine emulator:");
 
-            string data = "The quick brown fox jumps over the lazy dog";
+            string data = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";//= "The quick brown fox jumps over the lazy dog";
             Enigma e = new Enigma();
 
             // Plugboard
@@ -16,12 +16,32 @@ namespace Enigma
             e.Plugboard.Add('A', 'V');
 
             // Rotors for encryption
-            e.Rotors.Add(RotorType.Rotor_I, 'A');
-            e.Rotors.Add(RotorType.Rotor_II, 'B');
-            e.Rotors.Add(RotorType.Rotor_III, 'C');
+            //1
+            Rotor rotor1 = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
+            {
+                Notch = 'Y',
+                Turnover = 'Q',
+            };
+            //
+            Rotor rotor2 = new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE")
+            {
+                Notch = 'M',
+                Turnover = 'E',
+            };
+            //3
+            Rotor rotor3 = new Rotor("BDFHJLCPRTXVZNYEIWGAKMUSQO")
+            {
+                Notch = 'D',
+                Turnover = 'V',
+            };
+            Rotor ReflectorB = new Rotor("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+        
+            e.Rotors.Add(rotor1, 'A');
+            e.Rotors.Add(rotor2, 'B');
+            e.Rotors.Add(rotor3, 'C');
 
             // Reflector
-            e.Rotors.SetReflector(ReflectorType.UWK_B);
+            e.Rotors.SetReflector(ReflectorB);
 
             string result = e.Encrypt(data);
 
@@ -30,10 +50,10 @@ namespace Enigma
 
             // Reset Rotors for decryption
             e.Rotors.Clear(); // Очищаем роторы от текущего состояния
-            e.Rotors.Add(RotorType.Rotor_I, 'A');
-            e.Rotors.Add(RotorType.Rotor_II, 'B');
-            e.Rotors.Add(RotorType.Rotor_III, 'C');
-            e.Rotors.SetReflector(ReflectorType.UWK_B);
+            e.Rotors.Add(rotor1, 'A');
+            e.Rotors.Add(rotor2, 'B');
+            e.Rotors.Add(rotor3, 'C');
+            e.Rotors.SetReflector(ReflectorB);
 
             string decrypt = e.Decrypt(result);
 

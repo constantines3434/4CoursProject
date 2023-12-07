@@ -9,7 +9,7 @@
 		/// </summary>
 		public static Rotor Keyboard
 		{
-			get => new Rotor(Type.Keyboard, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+			get => new Rotor("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 			{
 				Notch = '\0',
 				Turnover = '\0',
@@ -22,32 +22,32 @@
 		public static class EnigmaI
 		{
 
-			public static Rotor I
-			{
-				get => new Rotor(Type.Rotor, "EKMFLGDQVZNTOWYHXUSPAIBRCJ")
-				{
-					Notch = 'Y',
-					Turnover = 'Q',
-				};
-			}
+			//public static Rotor I
+			//{
+			//	get => new Rotor(Type.Rotor, "EKMFLGDQVZNTOWYHXUSPAIBRCJ")
+			//	{
+			//		Notch = 'Y',
+			//		Turnover = 'Q',
+			//	};
+			//}
 
-			public static Rotor II
-			{
-				get => new Rotor(Type.Rotor, "AJDKSIRUXBLHWTMCQGZNPYFVOE")
-				{
-					Notch = 'M',
-					Turnover = 'E',
-				};
-			}
+			//public static Rotor II
+			//{
+			//	get => new Rotor(Type.Rotor, "AJDKSIRUXBLHWTMCQGZNPYFVOE")
+			//	{
+			//		Notch = 'M',
+			//		Turnover = 'E',
+			//	};
+			//}
 
-			public static Rotor III
-			{
-				get => new Rotor(Type.Rotor, "BDFHJLCPRTXVZNYEIWGAKMUSQO")
-				{
-					Notch = 'D',
-					Turnover = 'V',
-				};
-			}
+			//public static Rotor III
+			//{
+			//	get => new Rotor(Type.Rotor, "BDFHJLCPRTXVZNYEIWGAKMUSQO")
+			//	{
+			//		Notch = 'D',
+			//		Turnover = 'V',
+			//	};
+			//}
 
 		}
 		/// <summary>
@@ -58,16 +58,16 @@
 
 			public static Rotor ReflectorA
 			{
-				get => new Rotor(Type.Reflector, "EJMZALYXVBWFCRQUONTSPIKHGD");
+				get => new Rotor("EJMZALYXVBWFCRQUONTSPIKHGD");
 			}
 			public static Rotor ReflectorB
 			{
-				get => new Rotor(Type.Reflector, "YRUHQSLDPXNGOKMIEBFZCWVJAT");
+				get => new Rotor("YRUHQSLDPXNGOKMIEBFZCWVJAT");
 			}
 
 			public static Rotor ReflectorC
 			{
-				get => new Rotor(Type.Reflector, "FVPJIAOYEDRZXWGCTKUQSBNMHL");
+				get => new Rotor("FVPJIAOYEDRZXWGCTKUQSBNMHL");
 			}
 		}
 	}

@@ -8,32 +8,22 @@ namespace Enigma
 
 		private List<Rotor> _list = new List<Rotor>();
 
+		//исправить
 		private Rotor _keyboard = HistoricData.Keyboard;
 
 		public Rotor Reflector { get; private set; }
 
-		public Rotors()
+        //исправить
+        public Rotors()
 		{
 			this.Reflector = HistoricData.Reflectors.ReflectorB;
 		}
 
-		public void Add(RotorType type, char head)
+		//+
+		public void Add(Rotor Rotor, char head)
 		{
-            Rotor rotor;
-            switch (type)
-			{
-				case RotorType.Rotor_I:
-					rotor = HistoricData.EnigmaI.I;
-					break;
-				case RotorType.Rotor_II:
-					rotor = HistoricData.EnigmaI.II;
-					break;
-				case RotorType.Rotor_III:
-					rotor = HistoricData.EnigmaI.III;
-					break;
-				default:
-					throw new Exceptions.EnigmaRotorsException();
-			}
+            Rotor rotor = Rotor;
+            
 			rotor.SetHead(head);
 			this.Add(rotor);
 		}
@@ -67,37 +57,37 @@ namespace Enigma
 			for (int i = 0; i < heads.Length; i++)
 				this._list[i].SetHead(heads[i]);
 		}
-
-		public void SetReflector(ReflectorType type)
+		//+
+		public void SetReflector(Rotor reflector)
 		{
-			Rotor rotor;
-			switch (type)
-			{
-				case ReflectorType.UWK_A:
-					rotor = HistoricData.Reflectors.ReflectorA;
-					break;
-				case ReflectorType.UWK_B:
-					rotor = HistoricData.Reflectors.ReflectorB;
-					break;
-				case ReflectorType.UWK_C:
-					rotor = HistoricData.Reflectors.ReflectorC;
-					break;
-				default:
-					throw new Exceptions.EnigmaRotorsException();
-			}
+			Rotor rotor = reflector;
+			//switch (type)
+			//{
+			//	case ReflectorType.UWK_A:
+			//		rotor = HistoricData.Reflectors.ReflectorA;
+			//		break;
+			//	case ReflectorType.UWK_B:
+			//		rotor = HistoricData.Reflectors.ReflectorB;
+			//		break;
+			//	case ReflectorType.UWK_C:
+			//		rotor = HistoricData.Reflectors.ReflectorC;
+			//		break;
+			//	default:
+			//		throw new Exceptions.EnigmaRotorsException();
+			//}
 
 			this.Reflector = rotor;
 			if(this._list.Count > 0)
 				this.Reflector.Prev = this._list[this._list.Count - 1];
 		}
+		//+
+		//public void SetReflector(Rotor reflector)
+		//{
+		//	//if (reflector.Type != Type.Reflector)
+		//	//	throw new Exceptions.EnigmaRotorsException();
 
-		public void SetReflector(Rotor reflector)
-		{
-			if (reflector.Type != Type.Reflector)
-				throw new Exceptions.EnigmaRotorsException();
-
-			this.Reflector = reflector;
-		}
+		//	this.Reflector = reflector;
+		//}
 
         public char Enter(char @char, Plugboard pb)
         {

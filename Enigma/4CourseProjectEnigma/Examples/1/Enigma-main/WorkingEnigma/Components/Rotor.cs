@@ -31,11 +31,11 @@ namespace Enigma
 		}
 
 		#endregion
-
-		public Rotor(Type type, string chars)
+		//+
+		public Rotor(string chars)
 		{
 			this._chars = chars.ToCharArray();
-			this.Type = type;
+			//this.Type = type;
 		}
 		public static int GetAlphabetCharIndex(char @char) => Array.IndexOf(Common.ALPHABET, char.ToUpper(@char));
 
@@ -50,9 +50,10 @@ namespace Enigma
 			return Common.ALPHABET[index];
 		}
 		public void SetHead(char @char) => this._head = GetAlphabetCharIndex(@char);
+		//+
 		public char Enter(char @char)
 		{
-			if (this.Current == this.Turnover && this.Type == Type.Rotor)
+			if (this.Current == this.Turnover)// && this.Type == Type.Rotor)
 				this.Prev.Rotate();
 			if(this.IsFirst)
 				this.Rotate();
