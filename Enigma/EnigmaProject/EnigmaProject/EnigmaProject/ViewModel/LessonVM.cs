@@ -13,7 +13,6 @@ namespace EnigmaProject.ViewModel
     public class LessonVM : INotifyPropertyChanged
     {
         private Lesson selectedLesson;
-
         public ObservableCollection<Lesson> Lessons { get; set; }
         public Lesson SelectedLesson
         {

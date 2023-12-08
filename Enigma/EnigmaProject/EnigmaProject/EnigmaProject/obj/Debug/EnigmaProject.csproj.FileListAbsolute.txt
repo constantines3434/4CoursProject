@@ -1,3 +1,10 @@
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EnigmaProject.exe.config
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EnigmaProject.exe
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EnigmaProject.pdb
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.dll
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.xml
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.SqlServer.xml
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\EnigmaProject.csproj.AssemblyReference.cache
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\EnigmaProject.csproj.SuggestedBindingRedirects.cache
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\View\MainWindow.g.cs
@@ -14,13 +21,7 @@ C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\ob
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\EnigmaProject_MarkupCompile.cache
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\EnigmaProject_MarkupCompile.lref
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EnigmaProject.exe.config
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EnigmaProject.exe
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EnigmaProject.pdb
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.dll
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.SqlServer.dll
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.xml
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\App.baml
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\View\MainWindow.baml
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\UserControlls\Questions.baml
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\View\Authorization.baml
@@ -37,4 +38,3 @@ C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\ob
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\EnigmaProject.csproj.CopyComplete
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\EnigmaProject.exe
 C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\EnigmaProject.pdb
-C:\VS Projects\4CoursProject\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\App.baml

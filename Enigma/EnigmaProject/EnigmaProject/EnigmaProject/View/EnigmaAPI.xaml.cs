@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using EnigmaProject.ViewModel;
+
 namespace EnigmaProject.View
 {
     /// <summary>
@@ -42,7 +44,17 @@ namespace EnigmaProject.View
 
             var selectedValueReflector = selectedReflector.ToString();
 
+            string data = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";//= "The quick brown fox jumps over the lazy dog";
 
+            // Rotors for encryption
+            //1
+            //RotorVM rotor1 = new RotorVM("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
+            //{
+            //    //сделать окно
+               
+            //    rotor1.RotorDataHandler.Notch = 'Y',
+            //    Turnover = 'Q',
+            //};
             //получить роттеры, которые соответствуют выбранному набору
             //получть рефлектор
             //шифрование сообщения
