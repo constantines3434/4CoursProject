@@ -70,8 +70,6 @@
     <Compile Include="Common\Common.cs" />
     <Compile Include="Common\Enums.cs" />
     <Compile Include="Components\Plugboard.cs" />
-    <Compile Include="Components\Rotor.cs" />
-    <Compile Include="Components\Rotors.cs" />
     <Compile Include="Enigma.cs" />
     <Compile Include="Exceptions\EnigmaException.cs" />
     <Compile Include="Exceptions\EnigmaPlugboardException.cs" />
@@ -144,7 +142,7 @@
     <Compile Include="View\QuestionsAfterLessons.xaml.cs">
       <DependentUpon>QuestionsAfterLessons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RotorsVM.cs" />
+    <Compile Include="ViewModel\RotorsVM.cs" />
     <Compile Include="View\TheoreticalPage.xaml.cs">
       <DependentUpon>TheoreticalPage.xaml</DependentUpon>
     </Compile>

@@ -4,18 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnigmaProject.ViewModel;
+using EnigmaProject.View;
 
 namespace EnigmaProject
 {
     public class Enigma
     {
-        public Rotors Rotors { get; private set; }
+        public RotorsVM Rotors { get; private set; }
 
         public Plugboard Plugboard { get; private set; }
 
         public Enigma()
         {
-            this.Rotors = new Rotors();
+            this.Rotors = new RotorsVM();
             this.Plugboard = new Plugboard();
         }
 

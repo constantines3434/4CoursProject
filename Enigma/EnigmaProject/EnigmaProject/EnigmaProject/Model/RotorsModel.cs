@@ -10,7 +10,7 @@ namespace EnigmaProject.Model
     public class RotorsModel
     {
         #region Fields and Properties
-        public List<RotorVM> _list = new List<RotorVM>();
+        public List<RotorModel> _list = new List<RotorModel>();
 
         //исправить
         public RotorVM _keyboard = HistoricData.Keyboard;

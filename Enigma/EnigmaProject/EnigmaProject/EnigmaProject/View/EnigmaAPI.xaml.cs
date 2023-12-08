@@ -15,7 +15,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using EnigmaProject.ViewModel;
-
 namespace EnigmaProject.View
 {
     /// <summary>
@@ -80,6 +79,7 @@ namespace EnigmaProject.View
             e.Plugboard.Add('X', 'D');
             e.Plugboard.Add('A', 'V');
 
+            
             e.Rotors.Add(rotor1, 'A');
             e.Rotors.Add(rotor2, 'B');
             e.Rotors.Add(rotor3, 'C');
