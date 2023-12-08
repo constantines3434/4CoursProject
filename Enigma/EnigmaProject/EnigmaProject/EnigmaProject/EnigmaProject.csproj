@@ -111,6 +111,7 @@
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\RotorModel.cs" />
+    <Compile Include="Model\RotorsModel.cs" />
     <Compile Include="Model\SetOfRotor.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
@@ -143,6 +144,7 @@
     <Compile Include="View\QuestionsAfterLessons.xaml.cs">
       <DependentUpon>QuestionsAfterLessons.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RotorsVM.cs" />
     <Compile Include="View\TheoreticalPage.xaml.cs">
       <DependentUpon>TheoreticalPage.xaml</DependentUpon>
     </Compile>

@@ -11,6 +11,18 @@ namespace EnigmaProject.ViewModel
     public class RotorVM
     {
         public RotorModel RotorDataHandler { get; set; }
+        public char Notch
+        {
+            get => RotorDataHandler.Notch;
+            set => RotorDataHandler.Notch = value;
+        }
+
+        public char Turnover
+        {
+            get => RotorDataHandler.Turnover;
+            set => RotorDataHandler.Turnover = value;
+        }
+
         public RotorVM(string chars)
         {
             this.RotorDataHandler._chars = chars.ToCharArray();

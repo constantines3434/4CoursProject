@@ -23,6 +23,8 @@ namespace EnigmaProject.View
     /// </summary>
     public partial class EnigmaAPI : Page
     {
+        string data = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";//= "The quick brown fox jumps over the lazy dog";
+
         public EnigmaAPI()
         {
             InitializeComponent();
@@ -34,6 +36,7 @@ namespace EnigmaProject.View
             Rotor3.SelectedIndex = 0;
             Reflector.ItemsSource = EnigmaBase.GetContext().Reflectors.ToList();
             Reflector.SelectedIndex = 0;
+            MessageTextBox.Text = data;
         }
 
         public void Encryption()
@@ -41,23 +44,51 @@ namespace EnigmaProject.View
             var selectedReflector = Reflector.SelectedValue;
             if (selectedReflector == null)
                 return;
+            var selectedRotor1 = Rotor1.SelectedValue;
+            if (selectedRotor1 == null)
+                return;
 
             var selectedValueReflector = selectedReflector.ToString();
 
-            string data = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";//= "The quick brown fox jumps over the lazy dog";
-
             // Rotors for encryption
             //1
-            //RotorVM rotor1 = new RotorVM("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
-            //{
-            //    //сделать окно
-               
-            //    rotor1.RotorDataHandler.Notch = 'Y',
-            //    Turnover = 'Q',
-            //};
-            //получить роттеры, которые соответствуют выбранному набору
-            //получть рефлектор
-            //шифрование сообщения
+            //сделать окно
+            RotorVM rotor1 = new RotorVM("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
+            {
+                
+                Notch = 'Y',
+                Turnover = 'Q',
+            };
+            RotorVM rotor2 = new RotorVM("AJDKSIRUXBLHWTMCQGZNPYFVOE")
+            {
+                Notch = 'M',
+                Turnover = 'E',
+            };
+            //3
+            RotorVM rotor3 = new RotorVM("BDFHJLCPRTXVZNYEIWGAKMUSQO")
+            {
+                Notch = 'D',
+                Turnover = 'V',
+            };
+
+            RotorVM ReflectorB = new RotorVM("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+
+            Enigma e = new Enigma();
+
+            // Plugboard
+            //сделать отдельное окно
+            e.Plugboard.Add('X', 'D');
+            e.Plugboard.Add('A', 'V');
+
+            e.Rotors.Add(rotor1, 'A');
+            e.Rotors.Add(rotor2, 'B');
+            e.Rotors.Add(rotor3, 'C');
+
+            // Reflector
+            e.Rotors.SetReflector(ReflectorB);
+
+            string result = e.Encrypt(data);
+
         }
     }
 }

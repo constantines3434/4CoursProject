@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnigmaLogicProcessor
+namespace EnigmaProject
 {
     public class Enigma
     {

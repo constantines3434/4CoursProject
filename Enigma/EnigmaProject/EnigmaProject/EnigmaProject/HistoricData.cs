@@ -4,17 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnigmaProject.ViewModel;
 
-namespace EnigmaLogicProcessor
+namespace EnigmaProject
 {
     public static class HistoricData
     {
         /// <summary>
         /// Keyboard
         /// </summary>
-        public static Rotor Keyboard
+        public static RotorVM Keyboard
         {
-            get => new Rotor("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+            get => new RotorVM("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
             {
                 Notch = '\0',
                 Turnover = '\0',
@@ -22,57 +23,23 @@ namespace EnigmaLogicProcessor
         }
 
         /// <summary>
-        /// Enigma I
-        /// </summary>
-        public static class EnigmaI
-        {
-
-            //public static Rotor I
-            //{
-            //	get => new Rotor(Type.Rotor, "EKMFLGDQVZNTOWYHXUSPAIBRCJ")
-            //	{
-            //		Notch = 'Y',
-            //		Turnover = 'Q',
-            //	};
-            //}
-
-            //public static Rotor II
-            //{
-            //	get => new Rotor(Type.Rotor, "AJDKSIRUXBLHWTMCQGZNPYFVOE")
-            //	{
-            //		Notch = 'M',
-            //		Turnover = 'E',
-            //	};
-            //}
-
-            //public static Rotor III
-            //{
-            //	get => new Rotor(Type.Rotor, "BDFHJLCPRTXVZNYEIWGAKMUSQO")
-            //	{
-            //		Notch = 'D',
-            //		Turnover = 'V',
-            //	};
-            //}
-
-        }
-        /// <summary>
         /// Reflectors
         /// </summary>
         public static class Reflectors
         {
 
-            public static Rotor ReflectorA
+            public static RotorVM ReflectorA
             {
-                get => new Rotor("EJMZALYXVBWFCRQUONTSPIKHGD");
+                get => new RotorVM("EJMZALYXVBWFCRQUONTSPIKHGD");
             }
-            public static Rotor ReflectorB
+            public static RotorVM ReflectorB
             {
-                get => new Rotor("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+                get => new RotorVM("YRUHQSLDPXNGOKMIEBFZCWVJAT");
             }
 
-            public static Rotor ReflectorC
+            public static RotorVM ReflectorC
             {
-                get => new Rotor("FVPJIAOYEDRZXWGCTKUQSBNMHL");
+                get => new RotorVM("FVPJIAOYEDRZXWGCTKUQSBNMHL");
             }
         }
     }
