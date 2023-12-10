@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using EnigmaProject.ViewModel;
+using EnigmaProject.Common;
 namespace EnigmaProject.View
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace EnigmaProject.View
     public partial class EnigmaAPI : Page
     {
         string data = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";//= "The quick brown fox jumps over the lazy dog";
-
+        string result = "";
         public EnigmaAPI()
         {
             InitializeComponent();
@@ -38,6 +39,10 @@ namespace EnigmaProject.View
             MessageTextBox.Text = data;
         }
 
+
+        /// <summary>
+        /// Шифрование Энигмы
+        /// </summary>
         public void Encryption()
         {
             var selectedReflector = Reflector.SelectedValue;
@@ -47,48 +52,79 @@ namespace EnigmaProject.View
             if (selectedRotor1 == null)
                 return;
 
-            var selectedValueReflector = selectedReflector.ToString();
+           var selectedValueReflector = selectedReflector.ToString();
 
             // Rotors for encryption
             //1
             //сделать окно
-            RotorVM rotor1 = new RotorVM("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
-            {
-                
-                Notch = 'Y',
-                Turnover = 'Q',
-            };
-            RotorVM rotor2 = new RotorVM("AJDKSIRUXBLHWTMCQGZNPYFVOE")
-            {
-                Notch = 'M',
-                Turnover = 'E',
-            };
-            //3
-            RotorVM rotor3 = new RotorVM("BDFHJLCPRTXVZNYEIWGAKMUSQO")
-            {
-                Notch = 'D',
-                Turnover = 'V',
-            };
+            //RotorVM rotor1 = new RotorVM("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
+            //{
+            //    Notch = 'Y',
+            //    Turnover = 'Q',
+            //};
+            //RotorVM rotor2 = new RotorVM("AJDKSIRUXBLHWTMCQGZNPYFVOE")
+            //{
+            //    Notch = 'M',
+            //    Turnover = 'E',
+            //};
+            ////3
+            //RotorVM rotor3 = new RotorVM("BDFHJLCPRTXVZNYEIWGAKMUSQO")
+            //{
+            //    Notch = 'D',
+            //    Turnover = 'V',
+            //};
 
-            RotorVM ReflectorB = new RotorVM("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+            //RotorVM ReflectorB = new RotorVM("YRUHQSLDPXNGOKMIEBFZCWVJAT");
 
+            //Enigma e = new Enigma();
+
+            //// Plugboard
+            ////сделать отдельное окно
+            //e.Plugboard.Add('X', 'D');
+            //e.Plugboard.Add('A', 'V');
+
+
+            //e.Rotors.Add(rotor1.RotorDataHandler, 'A');
+            //e.Rotors.Add(rotor2.RotorDataHandler, 'B');
+            //e.Rotors.Add(rotor3.RotorDataHandler, 'C');
+
+            //// Reflector
+            //e.Rotors.SetReflector(ReflectorB.RotorDataHandler);
+
+            //string result = e.Encrypt(data);
+
+            //return result;
+
+            Console.WriteLine("Enigma machine emulator:");
+
+            string data = "The quick brown fox jumps over the lazy dog";
             Enigma e = new Enigma();
 
-            // Plugboard
-            //сделать отдельное окно
+            //Plugboard
             e.Plugboard.Add('X', 'D');
             e.Plugboard.Add('A', 'V');
 
-            
-            e.Rotors.Add(rotor1, 'A');
-            e.Rotors.Add(rotor2, 'B');
-            e.Rotors.Add(rotor3, 'C');
+            //Rotors
+            e.Rotors.Add(RotorType.Rotor_I, 'A');
+            e.Rotors.Add(RotorType.Rotor_II, 'B');
+            e.Rotors.Add(RotorType.Rotor_III, 'C');
 
-            // Reflector
-            e.Rotors.SetReflector(ReflectorB);
+            //Reflector
+            e.Rotors.SetReflector(ReflectorType.UWK_B);
 
-            string result = e.Encrypt(data);
+            result = e.Encrypt(data);
 
+            //Console.WriteLine("Input: " + data);
+            //Console.WriteLine("Output: " + result);
+
+            Console.WriteLine();
+            Console.Read();
+        }
+
+        private void Encrypt_Click(object sender, RoutedEventArgs e)
+        {
+            Encryption();
+            Answer.Text = result;
         }
     }
 }

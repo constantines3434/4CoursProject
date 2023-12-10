@@ -70,6 +70,8 @@
     <Compile Include="Common\Common.cs" />
     <Compile Include="Common\Enums.cs" />
     <Compile Include="Components\Plugboard.cs" />
+    <Compile Include="Components\Rotor.cs" />
+    <Compile Include="Components\Rotors.cs" />
     <Compile Include="Enigma.cs" />
     <Compile Include="Exceptions\EnigmaException.cs" />
     <Compile Include="Exceptions\EnigmaPlugboardException.cs" />
@@ -108,8 +110,6 @@
     <Compile Include="Model\Rotor.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\RotorModel.cs" />
-    <Compile Include="Model\RotorsModel.cs" />
     <Compile Include="Model\SetOfRotor.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
@@ -123,7 +123,6 @@
       <DependentUpon>Questions.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\LessonVM.cs" />
-    <Compile Include="ViewModel\RotorVM.cs" />
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
@@ -142,7 +141,6 @@
     <Compile Include="View\QuestionsAfterLessons.xaml.cs">
       <DependentUpon>QuestionsAfterLessons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\RotorsVM.cs" />
     <Compile Include="View\TheoreticalPage.xaml.cs">
       <DependentUpon>TheoreticalPage.xaml</DependentUpon>
     </Compile>

@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EnigmaLogicProcessor.Exceptions
+namespace EnigmaProject.Exceptions
 {
-    public class EnigmaRotorsException : EnigmaException
-    {
-    }
+
+	public class EnigmaRotorsException : EnigmaException
+	{
+	}
+
 }

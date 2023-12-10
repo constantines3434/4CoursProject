@@ -1,44 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EnigmaLogicProcessor.Exceptions
+namespace EnigmaProject.Exceptions
 {
-    public class EnigmaPlugboardException : Exception
-    {
-        public EnigmaPlugboardException() : base("Plugboard general error.")
-        {
-        }
+	public class EnigmaPlugboardException : Exception
+	{
+		public EnigmaPlugboardException() : base("Plugboard general error.")
+		{
+		}
 
-        public EnigmaPlugboardException(string message) : base(message)
-        {
-        }
-    }
+		public EnigmaPlugboardException(string message) : base(message)
+		{
+		}
+	}
 
-    public class EnigmaPlugboardAddCharException : EnigmaPlugboardException
-    {
+	public class EnigmaPlugboardAddCharException : EnigmaPlugboardException
+	{
 
-        public char Char { get; set; }
+		public char Char { get; set; }
 
-        public EnigmaPlugboardAddCharException(string message, char @char) : base(message)
-        {
-            this.Char = @char;
-        }
+		public EnigmaPlugboardAddCharException(string message, char @char) : base(message)
+		{
+			this.Char = @char;
+		}
 
-    }
+	}
 
-    public class EnigmaPlugboardAddPairException : EnigmaPlugboardException
-    {
+	public class EnigmaPlugboardAddPairException : EnigmaPlugboardException
+	{
 
-        public string Pair { get; set; }
+		public string Pair { get; set; }
 
-        public EnigmaPlugboardAddPairException(string message, string pair) : base(message)
-        {
-            this.Pair = pair;
-        }
+		public EnigmaPlugboardAddPairException(string message, string pair) : base(message)
+		{
+			this.Pair = pair;
+		}
 
-    }
+	}
 
 }
