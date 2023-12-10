@@ -1,0 +1,15 @@
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\bin\Debug\net6.0\4CourseProjectEnigma.exe
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\bin\Debug\net6.0\4CourseProjectEnigma.deps.json
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\bin\Debug\net6.0\4CourseProjectEnigma.runtimeconfig.json
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\bin\Debug\net6.0\4CourseProjectEnigma.dll
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\bin\Debug\net6.0\4CourseProjectEnigma.pdb
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.csproj.AssemblyReference.cache
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.AssemblyInfoInputs.cache
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.AssemblyInfo.cs
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.csproj.CoreCompileInputs.cache
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.dll
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\refint\4CourseProjectEnigma.dll
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.pdb
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\4CourseProjectEnigma.genruntimeconfig.cache
+C:\Users\Constantine\Desktop\Education\Kuzmenko\4CoursProject\Enigma\4CourseProjectEnigma\4CourseProjectEnigma\obj\Debug\net6.0\ref\4CourseProjectEnigma.dll

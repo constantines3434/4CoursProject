@@ -1,0 +1,27 @@
+1) доделать quize
+	сделать двумерный список
+	вопросов и отображать нужное
+	количество в зависимости
+	от последнего IdLesson
+2) доделать TheoreticalPage
+	ProgressBar связать с бд
+3) доделать usercontrols
+4) Enigma
+
+логин1
+пароль1
+
+else
+            {
+                MessageBox.Show("Опрос");
+                //переход на опрос
+            //    if (quize == null)
+            //    {
+            //        quize = new QuestionsAfterLessons();
+            //        quize.Show();
+            //        MainWindow.GetWindow(this)?.Close();
+            //    }
+            //    else
+            //        quize.Activate();
+            }
+

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "CyF+oy+zx6yaRkUFFjlxFJyeCRXsXXJCSMMTOKfTUAu2aAuxET53EVCBvDT9CV/xqmOaGz2yxmiD758AKjgyNg==",
+  "success": true,
+  "projectFilePath": "C:\\VS Projects\\4CoursProject\\Enigma\\4CourseProjectEnigma\\4CourseProjectEnigma\\4CourseProjectEnigma.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.24\\microsoft.windowsdesktop.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.24\\microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.24\\microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\Constantine\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.24\\microsoft.netcore.app.host.win-x64.6.0.24.nupkg.sha512"
+  ],
+  "logs": []
+}

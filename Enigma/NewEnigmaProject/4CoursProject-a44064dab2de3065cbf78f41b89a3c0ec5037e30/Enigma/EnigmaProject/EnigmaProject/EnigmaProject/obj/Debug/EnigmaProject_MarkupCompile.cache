@@ -1,0 +1,20 @@
+﻿EnigmaProject
+
+
+winexe
+C#
+.cs
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\
+EnigmaProject
+none
+false
+DEBUG;TRACE
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\App.xaml
+91631416131
+22032140209
+382136466883
+18-601110945
+View\MainWindow.xaml;UserControlls\Questions.xaml;View\Authorization.xaml;View\Captcha.xaml;View\EnigmaAPI.xaml;View\InterfaceAddEditUser.xaml;View\InterfaceAdministrator.xaml;View\QuestionsAfterLessons.xaml;View\TheoreticalPage.xaml;
+
+True
+

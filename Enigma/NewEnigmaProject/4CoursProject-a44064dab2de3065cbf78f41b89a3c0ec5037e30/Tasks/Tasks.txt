@@ -1,0 +1,6 @@
+User проходит Lesson ->
+	меняется UserProgress
+
+Enigma
+1) Plugboard
+3) Reflector
