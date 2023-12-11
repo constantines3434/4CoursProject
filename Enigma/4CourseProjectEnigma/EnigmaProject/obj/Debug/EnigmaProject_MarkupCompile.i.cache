@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\VS Projects\4CoursProject\Enigma\NewEnigmaProject\4CoursProject-a44064dab2de3065cbf78f41b89a3c0ec5037e30\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\obj\Debug\
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\
 EnigmaProject
 none
 false
 DEBUG;TRACE
-C:\VS Projects\4CoursProject\Enigma\NewEnigmaProject\4CoursProject-a44064dab2de3065cbf78f41b89a3c0ec5037e30\Enigma\EnigmaProject\EnigmaProject\EnigmaProject\App.xaml
-91631416131
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\App.xaml
+101385413191
 22032140209
-382136466883
-18479134465
-View\MainWindow.xaml;UserControlls\Questions.xaml;View\Authorization.xaml;View\Captcha.xaml;View\EnigmaAPI.xaml;View\InterfaceAddEditUser.xaml;View\InterfaceAdministrator.xaml;View\QuestionsAfterLessons.xaml;View\TheoreticalPage.xaml;
+39-1694224249
+20205212185
+UserControlls\EnigmaApiTextBlock.xaml;View\MainWindow.xaml;UserControlls\Questions.xaml;View\Authorization.xaml;View\Captcha.xaml;View\EnigmaAPI.xaml;View\InterfaceAddEditUser.xaml;View\InterfaceAdministrator.xaml;View\QuestionsAfterLessons.xaml;View\TheoreticalPage.xaml;
 
 True
 

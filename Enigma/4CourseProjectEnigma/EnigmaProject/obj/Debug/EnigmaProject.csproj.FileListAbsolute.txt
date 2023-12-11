@@ -118,3 +118,5 @@ C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\EnigmaProject.csproj.CopyComplete
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\EnigmaProject.exe
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\EnigmaProject.pdb
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\UserControlls\EnigmaApiTextBlock.g.cs
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\UserControlls\EnigmaApiTextBlock.baml

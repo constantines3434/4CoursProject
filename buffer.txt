@@ -1,27 +1,101 @@
-1) доделать quize
-	сделать двумерный список
-	вопросов и отображать нужное
-	количество в зависимости
-	от последнего IdLesson
-2) доделать TheoreticalPage
-	ProgressBar связать с бд
-3) доделать usercontrols
-4) Enigma
+using EnigmaProject.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-логин1
-пароль1
+using EnigmaProject.Components;
+namespace EnigmaProject.View
+{
+    //ошибка при шифрование
+    public partial class EnigmaAPI : Page
+    {
+        public EnigmaAPI()
+        {
+            InitializeComponent();
+            Rotor1.ItemsSource = EnigmaBase.GetContext().Rotors.ToList();
+            Rotor1.SelectedIndex = 0;
+            Rotor2.ItemsSource = EnigmaBase.GetContext().Rotors.ToList();
+            Rotor2.SelectedIndex = 1;
+            Rotor3.ItemsSource = EnigmaBase.GetContext().Rotors.ToList();
+            Rotor3.SelectedIndex = 2;
+            Reflector.ItemsSource = EnigmaBase.GetContext().Reflectors.ToList();
+            Reflector.SelectedIndex = 1;
+            DataTextBox.Text = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
+        }
 
-else
+        public string Encryption()
+        {
+            var selectedRotor1 = (Rotor)Rotor1.SelectedItem;
+            if (selectedRotor1 == null)
+                return "Ошибка";
+            
+            var selectedRotor2 = (Rotor)Rotor2.SelectedItem;
+            if (selectedRotor2 == null)
+                return "Ошибка";
+            
+            var selectedRotor3 = (Rotor)Rotor3.SelectedItem;
+            if (selectedRotor3 == null)
+                return "Ошибка";    
+
+            var selectedReflector = (Reflector)Reflector.SelectedItem;
+            if (selectedRotor3 == null)
+                return "Ошибка";
+
+
+            // Rotors for encryption
+            //1
+            MyRotor rotor1 = new MyRotor($"{selectedRotor2.Dictionary}")
             {
-                MessageBox.Show("Опрос");
-                //переход на опрос
-            //    if (quize == null)
-            //    {
-            //        quize = new QuestionsAfterLessons();
-            //        quize.Show();
-            //        MainWindow.GetWindow(this)?.Close();
-            //    }
-            //    else
-            //        quize.Activate();
-            }
+                Notch = 'Y',//NotchRotor1.Text.Length > 0 ? NotchRotor1.Text[0] : ' ', //Y
+                Turnover = 'Q'//TurnoverRotor1.Text.Length > 0 ? TurnoverRotor1.Text[0] : ' ', //Q
+            };
+            //
+            MyRotor rotor2 = new MyRotor($"{selectedRotor1.Dictionary}")
+            {
+                Notch = 'M',//NotchRotor2.Text.Length > 0 ? NotchRotor2.Text[0] : ' ', //M
+                Turnover = 'E',//TurnoverRotor2.Text.Length > 0 ? TurnoverRotor2.Text[0] : ' ', //E
+            };
+            //3
+            MyRotor rotor3 = new MyRotor($"{selectedRotor1.Dictionary}")
+            {
+                Notch = 'D',//NotchRotor3.Text.Length > 0 ? NotchRotor3.Text[0] : ' ', //D
+                Turnover = 'V'//TurnoverRotor3.Text.Length > 0 ? TurnoverRotor3.Text[0] : ' ', //V
+            };
+            //A EJMZALYXVBWFCRQUONTSPIKHGD
+            //B YRUHQSLDPXNGOKMIEBFZCWVJAT
+            //C FVPJIAOYEDRZXWGCTKUQSBNMHL 
+            MyRotor ReflectorB = new MyRotor($"{selectedReflector.Dictionary}");
 
+            Enigma e = new Enigma();
+
+            // Plugboard
+            //сделать отдельное окно
+            e.Plugboard.Add('X', 'D');
+            e.Plugboard.Add('A', 'V');
+
+            e.Rotors.Add(rotor1, 'A');
+            e.Rotors.Add(rotor2, 'B');
+            e.Rotors.Add(rotor3, 'C');
+
+            // Reflector
+            e.Rotors.SetReflector(ReflectorB);
+
+            return e.Encrypt(DataTextBox.Text);
+        }
+
+        private void EncryptButton_Click(object sender, RoutedEventArgs e) =>
+            Answer.Text = Encryption();
+
+    }
+}

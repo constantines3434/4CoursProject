@@ -13,6 +13,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -30,8 +31,12 @@
         <TextBox
             Grid.Row="0"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
             TextWrapping="Wrap"
+            x:Name="DataTextBox"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Width="590"
+            Grid.ColumnSpan="3"
             />
         <TextBlock
             Grid.Row="1"
@@ -41,10 +46,22 @@
         <ComboBox
             Grid.Row="1"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
             DisplayMemberPath="IdRotor"
             SelectedItem="{Binding Rotors}"
-            x:Name="Rotor1"/>
+            x:Name="Rotor1"
+            Width="100"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"/>
+        <TextBox
+                Grid.Row="1"
+                Grid.Column="1"
+                TextAlignment="Right"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="HeadRotor1"/>
+
         <TextBlock
             Grid.Row="2"
             Grid.Column="0"
@@ -53,10 +70,21 @@
         <ComboBox
             Grid.Row="2"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
             DisplayMemberPath="IdRotor"
             SelectedItem="{Binding Rotors}"
-            x:Name="Rotor2"/>
+            x:Name="Rotor2" 
+            Width="100"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"/>
+        <TextBox
+                Grid.Row="2"
+                Grid.Column="1"
+                TextAlignment="Right"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="HeadRotor2"/>
         <TextBlock
             Grid.Row="3"
             Grid.Column="0"
@@ -65,10 +93,21 @@
         <ComboBox
             Grid.Row="3"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
             DisplayMemberPath="IdRotor"
             SelectedItem="{Binding Rotors}"
-            x:Name="Rotor3"/>
+            x:Name="Rotor3"
+            Width="100"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"/>
+        <TextBox
+                Grid.Row="3"
+                Grid.Column="1"
+                TextAlignment="Right"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="HeadRotor3"/>
 
         <TextBlock
             Grid.Row="4"
@@ -78,10 +117,12 @@
         <ComboBox
             Grid.Row="4"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
             DisplayMemberPath="NameOfReflector"
             SelectedItem="{Binding Reflectors}"
-            x:Name="Reflector"/>
+            x:Name="Reflector"
+            Width="100"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"/>
         <TextBlock
             Grid.Row="5"
             Grid.Column="0"
@@ -90,15 +131,125 @@
         <TextBlock
             Grid.Row="5"
             Grid.Column="1"
+            Grid.ColumnSpan="2"
             Text="Ответ: "
             x:Name="Answer"
             TextWrapping="Wrap"
             />
         <Button
-            Grid.Column="2"
+            Grid.Column="3"
             Grid.Row="5"
             x:Name="EncryptButton"
             Content="Зашифровать"
             FontSize="20" Click="EncryptButton_Click"/>
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="2"
+            Text="Углубление"
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" 
+            />
+        
+        <TextBox
+                Grid.Row="1"
+                Grid.Column="2"
+                TextAlignment="Right"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="NotchRotor1"/>
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="3"
+            Text="Поворот"
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" 
+            />
+        <TextBox
+                Grid.Row="1"
+                Grid.Column="3"
+                TextAlignment="Right"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="TurnoverRotor1"/>
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="2"
+            Text="Углубление"
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" 
+            />
+
+        <TextBox
+                Grid.Row="2"
+                Grid.Column="2"
+                TextAlignment="Right"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="NotchRotor2"/>
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="3"
+            Text="Поворот"
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" 
+            />
+
+        <TextBox
+                Grid.Row="2"
+                Grid.Column="3"
+                TextAlignment="Right"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="TurnoverRotor2"/>
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="2"
+            Text="Углубление"
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" 
+            />
+        <TextBox
+                Grid.Row="3"
+                Grid.Column="2"
+                TextAlignment="Right"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="NotchRotor3"
+                />
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="4"
+            Text="Поворот"
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" 
+            />
+
+        <TextBox
+                Grid.Row="3"
+                Grid.Column="3"
+                TextAlignment="Right"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Width="20"
+                MaxLength="1"
+                x:Name="TurnoverRotor3"/>
+
     </Grid>
 </Page>

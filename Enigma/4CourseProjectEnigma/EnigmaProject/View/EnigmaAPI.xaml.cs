@@ -19,57 +19,62 @@ namespace EnigmaProject.View
 {
     public partial class EnigmaAPI : Page
     {
-        string result = "Ошибка";
-        string data = "THE"; //QUICK BROWN FOX JUMPS OVER THE LAZY DOG";//= "The quick brown fox jumps over the lazy dog";
-
         public EnigmaAPI()
         {
             InitializeComponent();
             Rotor1.ItemsSource = EnigmaBase.GetContext().Rotors.ToList();
             Rotor1.SelectedIndex = 0;
             Rotor2.ItemsSource = EnigmaBase.GetContext().Rotors.ToList();
-            Rotor2.SelectedIndex = 0;
+            Rotor2.SelectedIndex = 1;
             Rotor3.ItemsSource = EnigmaBase.GetContext().Rotors.ToList();
-            Rotor3.SelectedIndex = 0;
+            Rotor3.SelectedIndex = 2;
             Reflector.ItemsSource = EnigmaBase.GetContext().Reflectors.ToList();
-            Reflector.SelectedIndex = 0;
+            Reflector.SelectedIndex = 1;
+            DataTextBox.Text = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
         }
 
-        public void Encryption()
+        public string Encryption()
         {
-            //var selectedReflector = Reflector.SelectedValue;
-            //if (selectedReflector == null)
-            //    return;
+            var selectedRotor1 = (Rotor)Rotor1.SelectedItem;
+            if (selectedRotor1 == null)
+                return "Ошибка";
+            
+            var selectedRotor2 = (Rotor)Rotor2.SelectedItem;
+            if (selectedRotor2 == null)
+                return "Ошибка";
+            
+            var selectedRotor3 = (Rotor)Rotor3.SelectedItem;
+            if (selectedRotor3 == null)
+                return "Ошибка";    
 
-            //var selectedValueReflector = selectedReflector.ToString();
-
-
-            string data = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";//= "The quick brown fox jumps over the lazy dog";
+            var selectedReflector = (Reflector)Reflector.SelectedItem;
+            if (selectedRotor3 == null)
+                return "Ошибка";
 
             // Rotors for encryption
             //1
-            MyRotor rotor1 = new MyRotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
+            MyRotor rotor1 = new MyRotor($"{selectedRotor1.Dictionary}")
             {
                 //сделать окно
-                Notch = 'Y',
-                Turnover = 'Q',
+                Notch = NotchRotor1.Text[0],//'Y',
+                Turnover = NotchRotor1.Text[0]//'Q',
             };
             //
-            MyRotor rotor2 = new MyRotor("AJDKSIRUXBLHWTMCQGZNPYFVOE")
+            MyRotor rotor2 = new MyRotor($"{selectedRotor2.Dictionary}")
             {
-                Notch = 'M',
-                Turnover = 'E',
+                Notch = NotchRotor2.Text[0],//'M',
+                Turnover = NotchRotor2.Text[0]//'E',
             };
             //3
-            MyRotor rotor3 = new MyRotor("BDFHJLCPRTXVZNYEIWGAKMUSQO")
+            MyRotor rotor3 = new MyRotor($"{selectedRotor3.Dictionary}")
             {
-                Notch = 'D',
-                Turnover = 'V',
+                Notch = NotchRotor3.Text[0],//'D',
+                Turnover = NotchRotor3.Text[0]//'V',
             };
             //A EJMZALYXVBWFCRQUONTSPIKHGD
             //B YRUHQSLDPXNGOKMIEBFZCWVJAT
-            //C FVPJIAOYEDRZXWGCTKUQSBNMHL 
-            MyRotor ReflectorB = new MyRotor("YRUHQSLDPXNGOKMIEBFZCWVJAT");
+            //C FVPJIAOYEDRZXWGCTKUQSBNMHL
+            MyRotor ReflectorB = new MyRotor($"{selectedReflector.Dictionary}");
 
             Enigma e = new Enigma();
 
@@ -78,26 +83,19 @@ namespace EnigmaProject.View
             e.Plugboard.Add('X', 'D');
             e.Plugboard.Add('A', 'V');
 
-            e.Rotors.Add(rotor1, 'A');
-            e.Rotors.Add(rotor2, 'B');
-            e.Rotors.Add(rotor3, 'C');
+            e.Rotors.Add(rotor1, HeadRotor1.Text[0]); //A
+            e.Rotors.Add(rotor2, HeadRotor2.Text[0]); //B
+            e.Rotors.Add(rotor3, HeadRotor3.Text[0]); //C
 
             // Reflector
             e.Rotors.SetReflector(ReflectorB);
 
-             result = e.Encrypt(data);
-
-            //MessageBox.Show($"{result}");
-            //получить роттеры, которые соответствуют выбранному набору
-            //получть рефлектор
-            //шифрование сообщения
+            return e.Encrypt(DataTextBox.Text);
         }
 
-        private void EncryptButton_Click(object sender, RoutedEventArgs e)
-        {
-         //   MessageBox.Show($"{result}");
-            Encryption();
-            Answer.Text = result;
-        }
+        private void EncryptButton_Click(object sender, RoutedEventArgs e) =>
+            Answer.Text = Encryption();
+        
+
     }
 }

@@ -29,11 +29,11 @@ namespace EnigmaProject.View
     public partial class TheoreticalPage : Page
     {
         private LessonVM lessonViewModel;
-        private List<List<Lesson>> lessonsByTheme = new List<List<Lesson>>();
-        private int currentLessonIndex = 0;
-        private CountLessonsInTheme currentTheme = CountLessonsInTheme.First;
-        private int[] lessonCounts = { 2, 1, 2 }; // Соответствие количества уроков для каждой темы из enum
-        private List<UserProgress> Progress = EnigmaBase.GetContext().UserProgresses.ToList();
+        
+        //var selectedFruits = from fruit in fruits
+        //                     where fruit.StartsWith("А", StringComparison.CurrentCultureIgnoreCase)
+        //                     select fruit;
+
 
         public TheoreticalPage()
         {
@@ -64,6 +64,9 @@ namespace EnigmaProject.View
 
         private void ShowLesson(int lessonIndex)
         {
+
+            //var query = 
+
             int themeIndex = (int)currentTheme;
             if (themeIndex < lessonsByTheme.Count && lessonIndex >= 0 && lessonIndex < lessonsByTheme[themeIndex].Count)
             {
@@ -108,5 +111,4 @@ namespace EnigmaProject.View
             }
         }
     }
-
 }

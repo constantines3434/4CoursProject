@@ -47,8 +47,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -119,6 +121,9 @@
     <Compile Include="Model\UserProgress.cs">
       <DependentUpon>EnigmaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControlls\EnigmaApiTextBlock.xaml.cs">
+      <DependentUpon>EnigmaApiTextBlock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlls\Questions.xaml.cs">
       <DependentUpon>Questions.xaml</DependentUpon>
     </Compile>
@@ -144,6 +149,10 @@
     <Compile Include="View\TheoreticalPage.xaml.cs">
       <DependentUpon>TheoreticalPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="UserControlls\EnigmaApiTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
