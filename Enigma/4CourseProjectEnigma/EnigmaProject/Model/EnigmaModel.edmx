@@ -21,6 +21,7 @@
           <Property Name="LessonTitle" Type="nvarchar" MaxLength="100" />
           <Property Name="Content" Type="nvarchar" MaxLength="100" />
           <Property Name="Concepts" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsCompleted" Type="bit" />
         </EntityType>
         <EntityType Name="Questions">
           <Key>
@@ -264,6 +265,7 @@
           <Property Name="LessonTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Concepts" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsCompleted" Type="Boolean" />
           <NavigationProperty Name="UserProgresses" Relationship="Self.FK__UserProgr__IdLes__3C69FB99" FromRole="Lessons" ToRole="UserProgress" />
         </EntityType>
         <EntityType Name="Question">
@@ -481,6 +483,7 @@
                 <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="Concepts" ColumnName="Concepts" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

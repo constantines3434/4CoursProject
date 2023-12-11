@@ -2,7 +2,9 @@
 using EnigmaProject.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,97 +19,66 @@ using System.Windows.Shapes;
 
 namespace EnigmaProject.View
 {
-    /// <summary>
-    /// Логика взаимодействия для TheoreticalPage.xaml
-    /// </summary>
-    enum CountLessonsInTheme
-    {
-        First = 2,
-        Second = 1,
-        Third = 2
-    };
     public partial class TheoreticalPage : Page
     {
-        private LessonVM lessonViewModel;
-        
-        //var selectedFruits = from fruit in fruits
-        //                     where fruit.StartsWith("А", StringComparison.CurrentCultureIgnoreCase)
-        //                     select fruit;
 
-
+        private int currentL { get; set; }
+        private List<Lesson> LessonList = new List<Lesson>();
+        private List<Lesson> CurrentLesson = new List<Lesson>();
         public TheoreticalPage()
         {
             InitializeComponent();
-            lessonViewModel = new LessonVM();
-            DataContext = lessonViewModel;
-
-            // Заполнение уроков для каждой темы в соответствии с их количеством
-            int lessonIndex = 0;
-            foreach (var count in lessonCounts)
-            {
-                var lessons = new List<Lesson>();
-                for (int i = 0; i < count; i++)
-                {
-                    if (lessonIndex < lessonViewModel.Lessons.Count)
-                    {
-                        lessons.Add(lessonViewModel.Lessons[lessonIndex]);
-                        lessonIndex++;
-                    }
-                }
-                lessonsByTheme.Add(lessons);
-            }
-
-            // Показываем уроки первой темы
-            ShowLesson(currentLessonIndex);
+            currentL= 0;
+            LessonList = EnigmaBase.GetContext().Lessons.ToList();
+            CurrentLesson.Add(LessonList[currentL]);
+            control.ItemsSource = CurrentLesson;
             UpdateProgressBar();
-        }
 
-        private void ShowLesson(int lessonIndex)
-        {
 
-            //var query = 
 
-            int themeIndex = (int)currentTheme;
-            if (themeIndex < lessonsByTheme.Count && lessonIndex >= 0 && lessonIndex < lessonsByTheme[themeIndex].Count)
-            {
-                lessonViewModel.SelectedLesson = lessonsByTheme[themeIndex][lessonIndex];
-            }
-            else
-            {
-                // Обработка случая, когда lessonIndex выходит за пределы доступных уроков для текущей темы
-                // Можно показать сообщение об ошибке или выполнить другие действия
-            }
+            
+
+
         }
 
         private void UpdateProgressBar()
         {
             progressBar.Minimum = 0;
-            progressBar.Maximum = lessonCounts[(int)currentTheme] - 1;
-            progressBar.Value = currentLessonIndex;
+            //progressBar.Maximum = lessonCounts[(int)currentTheme] - 1;
+            //progressBar.Value = currentLessonIndex;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (currentLessonIndex < lessonCounts[(int)currentTheme] - 1)
+
+
+            currentL++;
+
+            using (EnigmaBase context = EnigmaBase.GetContext())
             {
-                currentLessonIndex++;
-                ShowLesson(currentLessonIndex);
-                progressBar.Value = currentLessonIndex;
+            
+                if (currentL == LessonList.Count() + 1)
+                {
+                    var lessonToUpdate = context.Lessons.FirstOrDefault(lesson => lesson.IdLesson == currentL);
+
+                    if (lessonToUpdate != null)
+                    {
+                        // Изменение нужных свойств выбранной записи
+                        lessonToUpdate.IsCompleted = false;
+
+                        // Сохранение изменений в базе данных
+                        context.SaveChanges();
+                    }
+                }
             }
-            else
+
+            if (currentL < LessonList.Count() && LessonList.Count != 0)
             {
-                MessageBox.Show("Опрос");
-                if (currentTheme < CountLessonsInTheme.Third)
-                {
-                    currentTheme++; // Переходим к следующей теме
-                    currentLessonIndex = 0;
-                    ShowLesson(currentLessonIndex);
-                    UpdateProgressBar();
-                }
-                else
-                {
-                    MessageBox.Show("Это был последний опрос");
-                }
+                
+                CurrentLesson.Clear();
+                CurrentLesson.Add(LessonList[currentL]);
+                control.ItemsSource = null;
+                control.ItemsSource = CurrentLesson;
             }
         }
     }

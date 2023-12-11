@@ -16,6 +16,7 @@
     <Property Name="LessonTitle" Type="nvarchar" MaxLength="100" />
     <Property Name="Content" Type="nvarchar" MaxLength="100" />
     <Property Name="Concepts" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsCompleted" Type="bit" />
   </EntityType>
   <EntityType Name="Questions">
     <Key>

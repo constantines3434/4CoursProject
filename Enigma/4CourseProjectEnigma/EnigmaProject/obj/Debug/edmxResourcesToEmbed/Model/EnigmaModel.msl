@@ -17,6 +17,7 @@
           <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="Concepts" ColumnName="Concepts" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
