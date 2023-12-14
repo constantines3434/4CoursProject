@@ -74,7 +74,7 @@ namespace EnigmaProject.View
             {
                 // Если все уроки пройдены, переходим на другую страницу
                 MessageBox.Show("Страница опросов");
-                //NavigationService.Navigate(new AnotherPage());
+                NavigationService.Navigate(new QuestionsAfterLessons());
             }
         }
     }

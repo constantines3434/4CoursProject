@@ -27,8 +27,8 @@ namespace EnigmaProject
             InitializeComponent();
             Manager.MainFrame = MainFrame;
             //  MainFrame.Navigate(new Authorization());
-            MainFrame.Navigate(new TheoreticalPage());
-            //MainFrame.Navigate(new Quize());
+            //MainFrame.Navigate(new TheoreticalPage());
+            MainFrame.Navigate(new QuizeAfterLessons());
             //MainFrame.Navigate(new EnigmaAPI());
 
         }

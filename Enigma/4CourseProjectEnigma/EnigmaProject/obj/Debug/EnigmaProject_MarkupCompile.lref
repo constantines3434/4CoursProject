@@ -1,4 +1,4 @@
-﻿C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\App.xaml;;
 FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\UserControlls\EnigmaApiTextBlock.xaml;;
 FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\View\MainWindow.xaml;;
@@ -9,5 +9,6 @@ FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\View\Eni
 FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\View\InterfaceAddEditUser.xaml;;
 FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\View\InterfaceAdministrator.xaml;;
 FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\View\QuestionsAfterLessons.xaml;;
+FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\View\QuizeAfterLessons.xaml;;
 FC:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\View\TheoreticalPage.xaml;;
 

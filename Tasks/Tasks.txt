@@ -1,32 +1,3 @@
-User проходит Lesson ->
-	меняется UserProgress
-
-Enigma
-1) Plugboard
-3) Reflector
-
-
-RotorVM rotor1 = new RotorVM("EKMFLGDQVZNTOWYHXUSPAIBRCJ")
-            {
-                
-                Notch = 'Y',
-                Turnover = 'Q',
-            };
-
-e.Rotors.Add(rotor1, 'A');
-
-//RotorsVM
-public void Add(RotorModel Rotor, char head)
-        {
-            RotorModel rotor = Rotor;
-
-            rotor.RotorVMInstance.SetHead(head);
-            this.Add(rotor);
-        }
-
-//RotorVM
-public RotorVM(string chars)
-        {
-            this.RotorDataHandler._chars = chars.ToCharArray();
-            //this.Type = type;
-        }
+1) страница опросов
+2) окно для plugboard
+3) дизайн
