@@ -72,12 +72,15 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <Button VerticalAlignment="Center"
+        <Button
+                Style="{StaticResource CustomButtonStyle}"
+                VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 Grid.Column="1"
                 Grid.Row="3"
                 Content="Далее"
-                FontSize="20"
+                FontSize="15"
+                Width="150"
                 Click="Button_Click"/>
     </Grid>
 </Page>

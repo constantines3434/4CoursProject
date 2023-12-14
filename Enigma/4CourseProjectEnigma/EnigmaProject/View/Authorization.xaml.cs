@@ -81,9 +81,11 @@ namespace EnigmaProject.View
                 MessageBox.Show("Вход выполнен успешно!");
                 if (authorizationUser.RoleOfUser == "Пользователь")
                     Manager.MainFrame.Navigate(new TheoreticalPage());
-                //MessageBox.Show("Окна теории");
+                
                 else if (authorizationUser.RoleOfUser == "Администратор")
                     Manager.MainFrame.Navigate(new InterfaceAdministrator());//переход на view соответствующей роли
+                
+
             }
             else
             {

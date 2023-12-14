@@ -34,6 +34,7 @@
             Grid.Row="2"
             Grid.Column="0"/>
         <TextBox
+            Style="{StaticResource CustomTextBoxStyle}"
             Width="550"
             MaxLength="100"
             Grid.Column="1"
@@ -43,13 +44,16 @@
             BorderBrush="Black"
             BorderThickness="1,1,1,1"/>
         <ComboBox
+
             x:Name="ComboRole"
             Grid.Row="1"
             Grid.Column="1"
             Width="300"
             HorizontalAlignment="Left"
             />
+
         <TextBox
+            Style="{StaticResource CustomTextBoxStyle}"
             Width="550"
             MaxLength="100"
             Grid.Column="1"
@@ -62,7 +66,9 @@
                 Content="Сохранение"
                 Grid.Column="1"
                 Grid.Row="4"
-                HorizontalAlignment="Right" Height="60"
+                HorizontalAlignment="Right" 
+                Style="{StaticResource CustomButtonStyle}"
+                Height="60"
                 />
     </Grid>
 </Page>

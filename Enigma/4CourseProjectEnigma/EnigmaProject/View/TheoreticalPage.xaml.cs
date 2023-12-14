@@ -47,19 +47,7 @@ namespace EnigmaProject.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             currentL++;
-            if (currentL == LessonList.Count)
-            {
-                using (EnigmaBase context = EnigmaBase.GetContext())
-                {
-                    var lessonToUpdate = context.Lessons.FirstOrDefault(lesson => lesson.IdLesson == currentL);
-
-                    if (lessonToUpdate != null)
-                    {
-                        lessonToUpdate.IsCompleted = false;
-                        context.SaveChanges();
-                    }
-                }
-            }
+            
 
             if (currentL < LessonList.Count() && LessonList.Count != 0)
             {

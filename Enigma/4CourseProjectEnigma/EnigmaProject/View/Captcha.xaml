@@ -39,6 +39,7 @@
                     FontSize="25"
                     x:Name="CaptchaTextBox"/>
         <Button
+            Style="{StaticResource CustomButtonStyle}"
                 Grid.Row="4"
                 Background="LightGray"
                 Width="120"

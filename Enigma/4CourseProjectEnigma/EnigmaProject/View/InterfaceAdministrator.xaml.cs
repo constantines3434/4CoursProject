@@ -89,6 +89,11 @@ namespace EnigmaProject.View
             addEditUser.DataUpdated += HandleDataUpdated; // Подпишитесь на событие
             Manager.MainFrame.Navigate(addEditUser);
         }
+
+        private void GoToEnigma_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new EnigmaAPI());
+        }
     }
 }
 

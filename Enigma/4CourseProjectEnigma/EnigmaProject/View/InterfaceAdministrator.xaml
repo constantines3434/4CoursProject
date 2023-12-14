@@ -19,11 +19,22 @@
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <TextBlock Text="Поиск по логину:" Width="175" HorizontalAlignment="Left"
                            TextAlignment="Right"/>
-                <TextBox Width="225" Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" HorizontalAlignment="Left"/>
+                <TextBox Style="{StaticResource CustomTextBoxStyle}" 
+                    Width="225" Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" HorizontalAlignment="Left"/>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" >
-                <Button Margin="20" Grid.Row="1" Width="225" Name="AddEmployee" Click="AddUser_Click" HorizontalAlignment="Center"
-                        Background="LightGray" Content="Добавить пользователя"/>
+                <Button Margin="20" Grid.Row="1"
+                        FontSize="13"
+                        Width="150" Name="AddEmployee"
+                        Click="AddUser_Click" HorizontalAlignment="Center"
+                        Style="{StaticResource CustomButtonStyle}" 
+                        Content="Добавить пользователя"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" >
+                <Button Margin="20" Grid.Row="1" Width="150" Name="GoToEnigma"
+                        Click="GoToEnigma_Click" HorizontalAlignment="Center"
+                        Style="{StaticResource CustomButtonStyle}"
+                        Content="Энигма"/>
             </StackPanel>
         </WrapPanel>
         <ListView Grid.Row="2" Name="ListViewEmployees" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
@@ -49,6 +60,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock
+                            
                             VerticalAlignment="Center"
                             TextAlignment="Center"
                             Width="390"
@@ -59,8 +71,13 @@
                             Grid.Row="0"
                             Text="{Binding RoleOfUser}"/>
                         <TextBlock Text="{Binding LoginOfUser}" Grid.Row="2" Margin="5 5 5 15" HorizontalAlignment="Center" FontSize="26" FontWeight="Bold" />
-                        <Button Content="Удалить" HorizontalAlignment="Center" Grid.Row="6"  Click="DeleteButton_Click"/>
-                        <Button Content="Редактировать" HorizontalAlignment="Center" Grid.Row="7"  Click="EditUser_Click"/>
+                        <Button Style="{StaticResource CustomButtonStyle}"
+                                                                            Height="40"
+                                                                            Width="120"
+                                                                            Content="Удалить" HorizontalAlignment="Center"
+                                                                            Grid.Row="6"  Click="DeleteButton_Click"/>
+                        <Button Style="{StaticResource CustomButtonStyle}" Height="40"
+                                                                            Width="120" Content="Редактировать" HorizontalAlignment="Center" Grid.Row="7"  Click="EditUser_Click"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

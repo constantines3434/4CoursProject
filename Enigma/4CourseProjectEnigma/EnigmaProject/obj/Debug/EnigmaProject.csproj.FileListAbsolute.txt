@@ -99,7 +99,6 @@ C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\EnigmaProject_Content.g.cs
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\EnigmaProject_MarkupCompile.cache
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\EnigmaProject_MarkupCompile.lref
-C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\App.baml
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\View\MainWindow.baml
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\UserControlls\Questions.baml
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\View\Authorization.baml
@@ -119,3 +118,12 @@ C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\UserControlls\EnigmaApiTextBlock.baml
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\View\QuestionsAfterLessons.g.cs
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\View\QuestionsAfterLessons.baml
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\obj\Debug\App.baml
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\MaterialDesignColors.dll
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\MaterialDesignColors.pdb
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\bin\Debug\Microsoft.Xaml.Behaviors.xml
