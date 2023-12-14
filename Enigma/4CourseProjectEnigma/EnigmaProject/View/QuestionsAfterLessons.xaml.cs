@@ -19,86 +19,105 @@ using System.Windows.Shapes;
 
 namespace EnigmaProject.View
 {
-    /// <summary>
-    /// Логика взаимодействия для QuestionsAfterLessons.xaml
-    /// </summary>
+    // Класс AnswerViewModel для хранения ответов
+    public class AnswerViewModel : INotifyPropertyChanged
+    {
+        private bool _isSelected;
+        public bool IsSelected
+        {
+            get { return _isSelected; }
+            set
+            {
+                if (_isSelected != value)
+                {
+                    _isSelected = value;
+                    OnPropertyChanged("IsSelected");
+                }
+            }
+        }
+
+        private string _answerText;
+        public string AnswerText
+        {
+            get { return _answerText; }
+            set
+            {
+                if (_answerText != value)
+                {
+                    _answerText = value;
+                    OnPropertyChanged("AnswerText");
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
     public partial class QuestionsAfterLessons : Page
     {
-        public ObservableCollection<string> Answers { get; set; }
-        public ObservableCollection<string> CorrectAnswers { get; set; }
-        private int answersCount = 0;
-        //private int currentQuestionIndex = 0;
-
+        public ObservableCollection<AnswerViewModel> Answers { get; set; }
+        public ObservableCollection<AnswerViewModel> CorrectAnswers { get; set; } = new ObservableCollection<AnswerViewModel>();
         private int currentQ { get; set; }
         private List<Question> QuestionList = new List<Question>();
         private List<Question> CurrentQuestion = new List<Question>();
-        private int lastQuestionIndex;
 
         public QuestionsAfterLessons()
         {
             InitializeComponent();
-            Answers = new ObservableCollection<string>
-            {
-                "Ответ 1",
-                "Ответ 2",
-                "Ответ 3",
-                "Ответ 4",
+            Answers = new ObservableCollection<AnswerViewModel>
+        {
+            new AnswerViewModel { AnswerText = "Обратимое преобразование информации \n в целях её сокрытия" },
+            new AnswerViewModel { AnswerText = "необратимое сообщение" },
+            new AnswerViewModel { AnswerText = "Набор символов" },
+            new AnswerViewModel { AnswerText = "Нет такого понятия" },
+        };
 
-                "Ответ 5",
-                "Ответ 6",
-                "Ответ 7",
-                "Ответ 8",
-
-                "Ответ 9",
-                "Ответ 10",
-                "Ответ 11",
-                "Ответ 12"
-            };
-            
             currentQ = 0;
             QuestionList = EnigmaBase.GetContext().Questions.ToList();
-            lastQuestionIndex = QuestionList.Count - 1;
             CurrentQuestion.Add(QuestionList[currentQ]);
             controlText.ItemsSource = CurrentQuestion;
-
-            DataContext = this;//
+            control.ItemsSource = Answers;
+            DataContext = this;
         }
 
-        /// <summary>
-        /// ответ на вопрос
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //правильный ответ
-            if (answersCount == 5)
-            {
-                MessageBox.Show("Переход к Энигме");
-                Commands.Manager.MainFrame.Navigate(new EnigmaAPI());
-            }
-            string selectedText = "";
             foreach (var item in control.Items)
+            {
                 if (item is RadioButton radioButton && radioButton.IsChecked == true)
-                { 
-                    selectedText = radioButton.Content.ToString();
-                    CorrectAnswers.Add(selectedText);
-                    answersCount++;
-
-                    //обновления вопросов
-                    currentQ++;
-
-                    // bool isAnswerCorrect = userAnswer == correctAnswer;
-                    if (currentQ < QuestionList.Count() && QuestionList.Count != 0)
+                {
+                    var selectedAnswer = radioButton.DataContext as AnswerViewModel;
+                    if (selectedAnswer != null)
                     {
-                        CurrentQuestion.Clear();
-                        CurrentQuestion.Add(QuestionList[currentQ]);
-                        control.ItemsSource = null;
-                        control.ItemsSource = CurrentQuestion;
+                        CorrectAnswers.Add(selectedAnswer);
+                        selectedAnswer.IsSelected = true;
                     }
                 }
+            }
 
-           
+            currentQ++;
+            if (currentQ < QuestionList.Count && QuestionList.Count != 0)
+            {
+                CurrentQuestion.Clear();
+                CurrentQuestion.Add(QuestionList[currentQ]);
+                controlText.ItemsSource = CurrentQuestion;
+            }
+            else
+            {
+                if (CorrectAnswers.Count == 0)
+                {
+                    MessageBox.Show("Переход к Энигме");
+                    Commands.Manager.MainFrame.Navigate(new EnigmaAPI());
+                }
+                else
+                {
+                    MessageBox.Show("Ответьте на все вопросы перед переходом");
+                }
+            }
         }
     }
 }

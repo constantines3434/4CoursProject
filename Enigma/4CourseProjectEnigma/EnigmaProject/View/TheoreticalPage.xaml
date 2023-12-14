@@ -14,6 +14,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -26,9 +27,20 @@
                      Grid.Column="0"
                      Grid.ColumnSpan="2"
                      Grid.Row="0"/>
-
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Главное"
+            FontSize="15"
+            />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Основной текст"
+            FontSize="15"
+            />
         <ItemsControl x:Name="control"
-                      Grid.Row="1"
+                      Grid.Row="2"
                       Grid.Column="0"
                       Grid.ColumnSpan="2">
             <ItemsControl.ItemTemplate>
@@ -63,7 +75,7 @@
         <Button VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 Grid.Column="1"
-                Grid.Row="2"
+                Grid.Row="3"
                 Content="Далее"
                 FontSize="20"
                 Click="Button_Click"/>

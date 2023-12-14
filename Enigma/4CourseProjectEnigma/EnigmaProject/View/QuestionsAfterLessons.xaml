@@ -15,11 +15,17 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
-        
-        <ItemsControl Grid.Row="1" Grid.Column="0" x:Name="controlText">
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="Опрос"
+            FontSize="20"/>
+        <ItemsControl Grid.Row="2" Grid.Column="0" x:Name="controlText">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <TextBlock x:Name="QuestionTextBlock" Grid.Row="0" Grid.Column="0"
@@ -32,23 +38,26 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <ItemsControl Grid.Row="1"
-                      Grid.Column="1"
-                      Grid.ColumnSpan="2"
-                      x:Name="control"
-                      ItemsSource="{Binding Answers}">
+        <ItemsControl Grid.Row="2"
+              Grid.Column="1"
+              Grid.ColumnSpan="2"
+              x:Name="control"
+              ItemsSource="{Binding Answers}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <RadioButton Content="{Binding}" Margin="20"
-                             GroupName="AnswersGroup"
-                             />
+                    <RadioButton Content="{Binding AnswerText}"
+                         Margin="20"
+                         GroupName="AnswersGroup"
+                         IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <Button Grid.Row="2" Grid.Column="1" 
+
+        <Button Grid.Row="3" Grid.Column="1" 
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Content="Ответить"
-                FontSize="18" Click="Button_Click"/>
+                FontSize="18"
+                Click="Button_Click"/>
     </Grid>
 </Page>

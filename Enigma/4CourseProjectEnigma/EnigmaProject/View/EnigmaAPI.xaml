@@ -123,25 +123,18 @@
             Width="100"
             VerticalAlignment="Center"
             HorizontalAlignment="Left"/>
-        <TextBlock
-            Grid.Row="5"
-            Grid.Column="0"
-            Text="Результат:"
-            />
-        <TextBlock
-            Grid.Row="5"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            Text="Ответ: "
-            x:Name="Answer"
-            TextWrapping="Wrap"
-            />
         <Button
             Grid.Column="3"
             Grid.Row="5"
             x:Name="EncryptButton"
             Content="Зашифровать"
             FontSize="20" Click="EncryptButton_Click"/>
+        <Button
+            Grid.Column="2"
+            Grid.Row="5"
+            x:Name="DecryptButton"
+            Content="Дешифровать"
+            FontSize="20" Click="DecryptButton_Click"/>
         <TextBlock
             Grid.Row="1"
             Grid.Column="2"

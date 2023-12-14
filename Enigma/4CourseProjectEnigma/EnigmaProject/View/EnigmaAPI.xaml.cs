@@ -21,6 +21,7 @@ namespace EnigmaProject.View
 {
     public partial class EnigmaAPI : Page
     {
+        int Choice;
         public EnigmaAPI()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace EnigmaProject.View
             DataTextBox.Text = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
         }
 
-        public string Encryption()
+        public string Operation(string text, int choice)
         {
             var selectedRotor1 = (Rotor)Rotor1.SelectedItem;
             if (selectedRotor1 == null)
@@ -92,19 +93,42 @@ namespace EnigmaProject.View
             // Reflector
             e.Rotors.SetReflector(ReflectorB);
 
-            return e.Encrypt(DataTextBox.Text);
+
+            string answer = "";
+            if (choice == 1)
+                answer =  e.Encrypt(text);
+            else if (choice == 2)
+                answer =  e.Decrypt(text);
+            e.Rotors.Clear();
+            return answer;
         }
 
         private void EncryptButton_Click(object sender, RoutedEventArgs e)
         {
-            using (StreamWriter writer = new StreamWriter("Answer.txt", true))
+            using (StreamWriter writer = new StreamWriter("Encrypt.txt", true))
             {
                 //шифрование
-                 writer.WriteLine($"{Encryption()}");
-                //await writer.WriteAsync("4,5");
+                writer.WriteLine($"{Operation(DataTextBox.Text, 1)}");
+                MessageBox.Show("Сообщение зашифровано");
             }
-            //Answer.Text = Encryption();
         }
 
+        private void DecryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            string text;
+            //дешифрование
+            using (StreamReader reader = new StreamReader("Encrypt.txt"))
+            {
+                text = reader.ReadToEnd();
+                text = Operation(text, 2);
+                MessageBox.Show("Сообщение Дешифровано");
+            }
+            //запись ответа
+            using (StreamWriter writer = new StreamWriter("Decrypt.txt", true))
+            {
+                writer.WriteLine($"{text}");
+                MessageBox.Show("Ответ записан");
+            }
+        }
     }
 }
