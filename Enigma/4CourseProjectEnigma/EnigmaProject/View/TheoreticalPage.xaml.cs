@@ -21,52 +21,41 @@ namespace EnigmaProject.View
 {
     public partial class TheoreticalPage : Page
     {
-
         private int currentL { get; set; }
         private List<Lesson> LessonList = new List<Lesson>();
         private List<Lesson> CurrentLesson = new List<Lesson>();
+        private int lastLessonIndex;
+
         public TheoreticalPage()
         {
             InitializeComponent();
-            currentL= 0;
+            currentL = 0;
             LessonList = EnigmaBase.GetContext().Lessons.ToList();
+            lastLessonIndex = LessonList.Count - 1;
             CurrentLesson.Add(LessonList[currentL]);
             control.ItemsSource = CurrentLesson;
             UpdateProgressBar();
-
-
-
-            
-
-
         }
 
         private void UpdateProgressBar()
         {
             progressBar.Minimum = 0;
-            //progressBar.Maximum = lessonCounts[(int)currentTheme] - 1;
-            //progressBar.Value = currentLessonIndex;
+            progressBar.Maximum = lastLessonIndex;
+            progressBar.Value = currentL; // Устанавливаем текущее значение ProgressBar
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
             currentL++;
-
-            using (EnigmaBase context = EnigmaBase.GetContext())
+            if (currentL == LessonList.Count)
             {
-            
-                if (currentL == LessonList.Count() + 1)
+                using (EnigmaBase context = EnigmaBase.GetContext())
                 {
                     var lessonToUpdate = context.Lessons.FirstOrDefault(lesson => lesson.IdLesson == currentL);
 
                     if (lessonToUpdate != null)
                     {
-                        // Изменение нужных свойств выбранной записи
                         lessonToUpdate.IsCompleted = false;
-
-                        // Сохранение изменений в базе данных
                         context.SaveChanges();
                     }
                 }
@@ -74,12 +63,21 @@ namespace EnigmaProject.View
 
             if (currentL < LessonList.Count() && LessonList.Count != 0)
             {
-                
                 CurrentLesson.Clear();
                 CurrentLesson.Add(LessonList[currentL]);
                 control.ItemsSource = null;
                 control.ItemsSource = CurrentLesson;
+
+                UpdateProgressBar(); // Обновляем значение ProgressBar после добавления нового урока
+            }
+            else
+            {
+                // Если все уроки пройдены, переходим на другую страницу
+                MessageBox.Show("Страница опросов");
+                //NavigationService.Navigate(new AnotherPage());
             }
         }
     }
+
+
 }
