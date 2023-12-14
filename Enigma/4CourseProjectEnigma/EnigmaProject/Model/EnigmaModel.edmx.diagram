@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3d24a48bd4cd47a2a19f69376fb7ea91" Name="Diagram1">
+      <Diagram DiagramId="6203a07be6234482b5f386a7f34b418c" Name="Diagram1">
         <EntityTypeShape EntityType="EnigmaBaseModel.EnigmaMachine" Width="1.5" PointX="8" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EnigmaBaseModel.Lesson" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="EnigmaBaseModel.Question" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />

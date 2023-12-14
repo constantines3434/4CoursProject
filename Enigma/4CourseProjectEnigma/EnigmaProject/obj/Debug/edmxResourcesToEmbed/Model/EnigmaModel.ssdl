@@ -14,8 +14,8 @@
     </Key>
     <Property Name="IdLesson" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LessonTitle" Type="nvarchar" MaxLength="100" />
-    <Property Name="Content" Type="nvarchar" MaxLength="100" />
-    <Property Name="Concepts" Type="nvarchar" MaxLength="100" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Concepts" Type="nvarchar" MaxLength="1000" />
     <Property Name="IsCompleted" Type="bit" />
   </EntityType>
   <EntityType Name="Questions">
@@ -23,7 +23,7 @@
       <PropertyRef Name="IdQuestion" />
     </Key>
     <Property Name="IdQuestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Content" Type="nvarchar" MaxLength="100" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2000" />
   </EntityType>
   <EntityType Name="Quizes">
     <Key>
