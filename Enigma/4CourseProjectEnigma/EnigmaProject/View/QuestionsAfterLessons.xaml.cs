@@ -24,8 +24,9 @@ namespace EnigmaProject.View
     /// </summary>
     public partial class QuestionsAfterLessons : Page
     {
-
         public ObservableCollection<string> Answers { get; set; }
+        public ObservableCollection<string> CorrectAnswers { get; set; }
+        private int answersCount = 0;
         //private int currentQuestionIndex = 0;
 
         private int currentQ { get; set; }
@@ -40,7 +41,18 @@ namespace EnigmaProject.View
             {
                 "Ответ 1",
                 "Ответ 2",
-                "Ответ 3"
+                "Ответ 3",
+                "Ответ 4",
+
+                "Ответ 5",
+                "Ответ 6",
+                "Ответ 7",
+                "Ответ 8",
+
+                "Ответ 9",
+                "Ответ 10",
+                "Ответ 11",
+                "Ответ 12"
             };
             
             currentQ = 0;
@@ -50,8 +62,8 @@ namespace EnigmaProject.View
             controlText.ItemsSource = CurrentQuestion;
 
             DataContext = this;//
-           
         }
+
         /// <summary>
         /// ответ на вопрос
         /// </summary>
@@ -59,40 +71,34 @@ namespace EnigmaProject.View
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            currentQ++;
-            
-
-            if (currentQ < QuestionList.Count() && QuestionList.Count != 0)
+            //правильный ответ
+            if (answersCount == 5)
             {
-                CurrentQuestion.Clear();
-                CurrentQuestion.Add(QuestionList[currentQ]);
-                control.ItemsSource = null;
-                control.ItemsSource = CurrentQuestion;
+                MessageBox.Show("Переход к Энигме");
+                Commands.Manager.MainFrame.Navigate(new EnigmaAPI());
             }
+            string selectedText = "";
+            foreach (var item in control.Items)
+                if (item is RadioButton radioButton && radioButton.IsChecked == true)
+                { 
+                    selectedText = radioButton.Content.ToString();
+                    CorrectAnswers.Add(selectedText);
+                    answersCount++;
 
+                    //обновления вопросов
+                    currentQ++;
 
+                    // bool isAnswerCorrect = userAnswer == correctAnswer;
+                    if (currentQ < QuestionList.Count() && QuestionList.Count != 0)
+                    {
+                        CurrentQuestion.Clear();
+                        CurrentQuestion.Add(QuestionList[currentQ]);
+                        control.ItemsSource = null;
+                        control.ItemsSource = CurrentQuestion;
+                    }
+                }
 
-
-
-
-            //при правильном ответе QuestionTextBlock меняется на следующий элемент списка
-            //currentQuestionIndex++;
-            //if (currentQuestionIndex >= Questions.Count)
-            //    currentQuestionIndex = 0;
-
-            //UpdateCurrentQuestion();
-
-        }
-        //private void UpdateCurrentQuestion()
-        //{
-        //    OnPropertyChanged(nameof(CurrentQuestion));
-        //}
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+           
         }
     }
 }

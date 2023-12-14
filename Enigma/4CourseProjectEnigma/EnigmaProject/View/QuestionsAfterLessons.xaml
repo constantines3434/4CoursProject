@@ -32,7 +32,11 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <ItemsControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="control" ItemsSource="{Binding Answers}">
+        <ItemsControl Grid.Row="1"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="2"
+                      x:Name="control"
+                      ItemsSource="{Binding Answers}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <RadioButton Content="{Binding}" Margin="20"

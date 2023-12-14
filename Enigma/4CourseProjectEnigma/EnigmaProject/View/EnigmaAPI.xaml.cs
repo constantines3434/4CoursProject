@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using EnigmaProject.Components;
+using System.IO;
+
 namespace EnigmaProject.View
 {
     public partial class EnigmaAPI : Page
@@ -38,14 +40,14 @@ namespace EnigmaProject.View
             var selectedRotor1 = (Rotor)Rotor1.SelectedItem;
             if (selectedRotor1 == null)
                 return "Ошибка";
-            
+
             var selectedRotor2 = (Rotor)Rotor2.SelectedItem;
             if (selectedRotor2 == null)
                 return "Ошибка";
-            
+
             var selectedRotor3 = (Rotor)Rotor3.SelectedItem;
             if (selectedRotor3 == null)
-                return "Ошибка";    
+                return "Ошибка";
 
             var selectedReflector = (Reflector)Reflector.SelectedItem;
             if (selectedRotor3 == null)
@@ -93,9 +95,16 @@ namespace EnigmaProject.View
             return e.Encrypt(DataTextBox.Text);
         }
 
-        private void EncryptButton_Click(object sender, RoutedEventArgs e) =>
-            Answer.Text = Encryption();
-        
+        private void EncryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (StreamWriter writer = new StreamWriter("Answer.txt", true))
+            {
+                //шифрование
+                 writer.WriteLine($"{Encryption()}");
+                //await writer.WriteAsync("4,5");
+            }
+            //Answer.Text = Encryption();
+        }
 
     }
 }
