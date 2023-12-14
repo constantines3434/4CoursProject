@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\VS Projects\4CoursProject\Enigma\4CourseProjectEnigma\EnigmaProject\App.xaml
-10320926958
+11-2122759137
 22032140209
-38-258512225
+3979330462
 20205212185
-UserControlls\EnigmaApiTextBlock.xaml;View\MainWindow.xaml;UserControlls\Questions.xaml;View\Authorization.xaml;View\Captcha.xaml;View\EnigmaAPI.xaml;View\InterfaceAddEditUser.xaml;View\InterfaceAdministrator.xaml;View\QuizeAfterLessons.xaml;View\TheoreticalPage.xaml;
+UserControlls\EnigmaApiTextBlock.xaml;View\MainWindow.xaml;UserControlls\Questions.xaml;View\Authorization.xaml;View\Captcha.xaml;View\EnigmaAPI.xaml;View\InterfaceAddEditUser.xaml;View\InterfaceAdministrator.xaml;View\QuestionsAfterLessons.xaml;View\QuizeAfterLessons.xaml;View\TheoreticalPage.xaml;
 
 False
 

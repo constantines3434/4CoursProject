@@ -143,6 +143,9 @@
     <Compile Include="View\InterfaceAdministrator.xaml.cs">
       <DependentUpon>InterfaceAdministrator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\QuestionsAfterLessons.xaml.cs">
+      <DependentUpon>QuestionsAfterLessons.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\QuizeAfterLessons.xaml.cs">
       <DependentUpon>QuizeAfterLessons.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\InterfaceAdministrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuestionsAfterLessons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
