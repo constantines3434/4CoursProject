@@ -21,7 +21,7 @@ namespace EnigmaProject.View
 {
     public partial class EnigmaAPI : Page
     {
-        int Choice;
+        private int Choice;
         public EnigmaAPI()
         {
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace EnigmaProject.View
                 Notch = NotchRotor1.Text[0],//'Y',
                 Turnover = NotchRotor1.Text[0]//'Q',
             };
-            //
+            //2
             MyRotor rotor2 = new MyRotor($"{selectedRotor2.Dictionary}")
             {
                 Notch = NotchRotor2.Text[0],//'M',
