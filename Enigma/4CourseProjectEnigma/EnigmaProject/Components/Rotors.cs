@@ -8,21 +8,16 @@ namespace EnigmaProject.Components
 {
     public class Rotors
     {
-
+        #region Instruments
         private List<MyRotor> _list = new List<MyRotor>();
-
-        //исправить
         private MyRotor _keyboard = HistoricData.Keyboard;
-
         public MyRotor Reflector { get; private set; }
-
-        //исправить
         public Rotors()
         {
             this.Reflector = HistoricData.Reflectors.ReflectorB;
         }
-
-        //+
+        #endregion
+        
         public void Add(MyRotor MyRotor, char head)
         {
             MyRotor rotor = MyRotor;

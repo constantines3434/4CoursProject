@@ -10,7 +10,7 @@ namespace EnigmaProject.Components
     public class MyRotor
     {
 
-        #region Fields & Properties
+        #region Instruments
 
         private readonly char[] _chars;
 
@@ -41,23 +41,49 @@ namespace EnigmaProject.Components
             this._chars = chars.ToCharArray();
             //this.Type = type;
         }
+        /// <summary>
+        /// Получает индекс символа в алфавите
+        /// </summary>
+        /// <param name="char"></param>
+        /// <returns></returns>
         public static int GetAlphabetCharIndex(char @char) => Array.IndexOf(Common.Common.ALPHABET, char.ToUpper(@char));
 
+        /// <summary>
+        /// Получает символ из алфавита
+        /// </summary>
+        /// <param name="char"></param>
+        /// <returns></returns>
         public char GetFromAlphabet(char @char)
         {
             int index = GetAlphabetCharIndex(@char);
             return this._chars[index];
         }
+
+        /// <summary>
+        /// Получает символ из ротора по заданному символу
+        /// </summary>
+        /// <param name="char"></param>
+        /// <returns></returns>
         public char GetFromRotor(char @char)
         {
             int index = Array.IndexOf(this._chars, char.ToUpper(@char));
             return Common.Common.ALPHABET[index];
         }
+
+        /// <summary>
+        /// Устанавливает начальную позицию ротора
+        /// </summary>
+        /// <param name="char"></param>
         public void SetHead(char @char) => this._head = GetAlphabetCharIndex(@char);
-        //+
+
+        /// <summary>
+        /// Производит шифрование символа по заданному правилу ротора
+        /// </summary>
+        /// <param name="char"></param>
+        /// <returns></returns>
         public char Enter(char @char)
         {
-            if (this.Current == this.Turnover)// && this.Type == Type.MyRotor)
+            if (this.Current == this.Turnover)
                 this.Prev.Rotate();
             if (this.IsFirst)
                 this.Rotate();
@@ -72,6 +98,12 @@ namespace EnigmaProject.Components
             char map = GetFromAlphabet(get);
             return map;
         }
+
+        /// <summary>
+        /// Производит обратное шифрование символа
+        /// </summary>
+        /// <param name="char"></param>
+        /// <returns></returns>
         public char Reverse(char @char)
         {
             int f = Array.IndexOf(Common.Common.ALPHABET, char.ToUpper(this.Current));
@@ -84,6 +116,10 @@ namespace EnigmaProject.Components
             char map = GetFromRotor(get);
             return map;
         }
+
+        /// <summary>
+        /// Поворачивает ротор на один символ
+        /// </summary>
         public void Rotate()
         {
             if (this._head + 1 >= this._chars.Length)

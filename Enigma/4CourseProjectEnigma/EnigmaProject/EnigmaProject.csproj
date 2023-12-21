@@ -136,6 +136,7 @@
     <Compile Include="UserControlls\Questions.xaml.cs">
       <DependentUpon>Questions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AnswerViewModel.cs" />
     <Compile Include="ViewModel\LessonVM.cs" />
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>

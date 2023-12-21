@@ -8,6 +8,7 @@ namespace EnigmaProject.Components
 {
     public class Plugboard
     {
+        #region Instruments
         private readonly List<char> _l1;
         private readonly List<char> _l2;
         public bool Enabled
@@ -19,21 +20,45 @@ namespace EnigmaProject.Components
             this._l1 = new List<char>();
             this._l2 = new List<char>();
         }
+        #endregion
+        /// <summary>
+        /// Добавляет пару символов для установки на плагборде
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <exception cref="Exceptions.EnigmaPlugboardAddCharException"></exception>
         public void Add(char input, char output)
         {
+            // Проверка входного и выходного символов на то, что они являются буквами
             if (!char.IsLetter(input))
-                throw new Exceptions.EnigmaPlugboardAddCharException("Input char is not valid letter.", input);
+                throw new Exceptions.EnigmaPlugboardAddCharException("Input char is not a valid letter.", input);
             if (!char.IsLetter(output))
-                throw new Exceptions.EnigmaPlugboardAddCharException("Output char is not valid letter.", output);
+                throw new Exceptions.EnigmaPlugboardAddCharException("Output char is not a valid letter.", output);
+
+            // Проверка наличия введенных символов в списке
             if (this.Exist(input))
                 throw new Exceptions.EnigmaPlugboardAddCharException($"Input char with the same value has already been added: {input}", input);
             if (this.Exist(output))
                 throw new Exceptions.EnigmaPlugboardAddCharException($"Output char with the same value has already been added: {input}", output);
 
+            // Добавление символов в плагборд
             this._l1.Add(char.ToUpper(input));
             this._l2.Add(char.ToUpper(output));
         }
+
+        /// <summary>
+        /// Проверяет, существует ли заданный символ в плагборде
+        /// </summary>
+        /// <param name="char"></param>
+        /// <returns></returns>
         public bool Exist(char @char) => this._l1.Contains(@char) || this._l2.Contains(@char);
+
+        /// <summary>
+        /// Возвращает символ после преобразования плагбордом
+        /// </summary>
+        /// <param name="char"></param>
+        /// <returns></returns>
+        /// <exception cref="Exceptions.EnigmaPlugboardException"></exception>
         public char Get(char @char)
         {
             @char = char.ToUpper(@char);
@@ -44,6 +69,10 @@ namespace EnigmaProject.Components
 
             throw new Exceptions.EnigmaPlugboardException("Char not found.");
         }
+
+        /// <summary>
+        /// Очищает плагборд, удаляя все настройки символов
+        /// </summary>
         public void Clear()
         {
             this._l1.Clear();

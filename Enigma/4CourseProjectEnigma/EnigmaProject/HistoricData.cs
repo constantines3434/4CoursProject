@@ -23,40 +23,6 @@ namespace EnigmaProject
         }
 
         /// <summary>
-        /// Enigma I
-        /// </summary>
-        public static class EnigmaI
-        {
-
-            //public static MyRotor I
-            //{
-            //	get => new MyRotor(Type.MyRotor, "EKMFLGDQVZNTOWYHXUSPAIBRCJ")
-            //	{
-            //		Notch = 'Y',
-            //		Turnover = 'Q',
-            //	};
-            //}
-
-            //public static MyRotor II
-            //{
-            //	get => new MyRotor(Type.MyRotor, "AJDKSIRUXBLHWTMCQGZNPYFVOE")
-            //	{
-            //		Notch = 'M',
-            //		Turnover = 'E',
-            //	};
-            //}
-
-            //public static MyRotor III
-            //{
-            //	get => new MyRotor(Type.MyRotor, "BDFHJLCPRTXVZNYEIWGAKMUSQO")
-            //	{
-            //		Notch = 'D',
-            //		Turnover = 'V',
-            //	};
-            //}
-
-        }
-        /// <summary>
         /// Reflectors
         /// </summary>
         public static class Reflectors
